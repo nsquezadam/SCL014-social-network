@@ -1,29 +1,29 @@
 // nos traemos las  constante de las views
-import { menu } from './view/templateMenu.js';
-import { home, signUp } from './view/templateHome.js';
-import { personajes } from './view/templatePersonajes.js';
+import { recover } from './view/recoverPassword.js';
+import { logIn } from './view/welcomeView.js';
+import { accountCreation } from './view/register.js';
 
-export const changeRoute = (hash) => {
-  if (hash === '#/') {
-    return showTemplate(hash);
-  } if (hash === '#/personajes') {
-    return showTemplate(hash);
-  }
-  return showTemplate(hash);
-};
-const showTemplate = (hash) => {
+const showView = (hash) => {
   const containerRoot = document.getElementById('root');
-  containerRoot.innerHTML = menu();
+  containerRoot.innerHTML = recover();
   switch (hash) {
     case '#/':
-      containerRoot.appendChild(home());
+      containerRoot.appendChild(logIn());
       break;
     case '#/personajes':
-      containerRoot.appendChild(personajes());
+      containerRoot.appendChild(accountCreation());
       break;
     default:
       containerRoot.innerHTML = `
           <h2>no existe</h2>`;
       break;
   }
+};
+export const changeRoute = (hash) => {
+  if (hash === '#/') {
+    return showView(hash);
+  } if (hash === '#/creacioncuenta') {
+    return showView(hash);
+  }
+  return showView(hash);
 };

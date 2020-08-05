@@ -1,15 +1,17 @@
 // Este es el punto de entrada de tu aplicacion
 // importamos vistas
 import { myFunction } from './lib/index.js';
-import { menu } from './lib/view/templateMenu.js';
-import { home } from './lib/view/templateHome.js';
-import { personajes } from './lib/view/templatePersonajes.js';
-import { } from './lib/router.js';
+//import { recover } from './lib/view/recoverPassword.js';
+import { login } from './lib/view/welcomeView.js';
+//import { accountCreation } from './lib/view/register.js';
+
+// import { accountCreation } from './lib/view/register.js';
+// import { changeRoute } from './lib/router.js';
 
 myFunction();
 
-// document.getElementById('root').innerHTML = menu();
-// document.getElementById('root').appendChild(home());
-// document.getElementById('root').appendChild(personajes());
+// document.getElementById('root').innerHTML = recover();
+document.getElementById('root').appendChild(login());
+document.getElementById('root').appendChild(accountCreation());
 
-const init =  ()
+// const init =  ()
