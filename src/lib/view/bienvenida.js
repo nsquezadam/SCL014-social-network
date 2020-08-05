@@ -1,5 +1,8 @@
-// login  con mail  y contraseña 
-export const logIn =() => {
+import { logIn } from '../index.js';
+
+
+// login Google
+/* export const logIn =() => {
     const provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider).then(function(result) {
         // This gives you a Google Access Token. You can use it to access the Google API.
@@ -16,7 +19,7 @@ export const logIn =() => {
         // The firebase.auth.AuthCredential type that was used.
         var credential = error.credential;
         // ...
-      });
+      }); */
       
     const viewLogIn = `
     <h1>Bienvenida</h1>
@@ -28,8 +31,8 @@ export const logIn =() => {
     <p>Ingresa tu  
     
    `
- return viewLogin 
- };
+ /*return viewLogin 
+ };*/
 
 
 
