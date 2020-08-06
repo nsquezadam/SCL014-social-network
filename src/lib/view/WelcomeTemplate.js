@@ -3,7 +3,7 @@ export const welcome = () => {
   const viewWelcome = `
     <h2>Bievenida a</h2>
     <div id="logoContainer">
-    <img id="logo" src="images/witLogo.png" alt="logo"> 
+    <img id="logo" src="imagenes/witLogo.png" alt="logo"> 
     </div>
     <h3>¡La red para mujeres en el mundo tech! </h3><br>
     <div class="containerForm">
