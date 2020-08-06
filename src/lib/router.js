@@ -36,15 +36,15 @@ const showTemplate = (hash) => {
 export const changeRoute = (hash) => {
   if (hash === '#/') {
     return showTemplate(hash);
-  } if (hash === '#/welcome') {
+  } if (hash === '#/WelcomeTemplate') {
     return showTemplate(hash);
-  } if (hash === '#/home') {
+  } if (hash === '#/homeTemplate') {
     return showTemplate(hash);
-  } if (hash === '#/register') {
+  } if (hash === '#/SignUpTemplate') {
     return showTemplate(hash);
-  } if (hash === '#/recover') {
+  } if (hash === '#/RecoverPassTemplate') {
     return showTemplate(hash);
-  } if (hash === '#/post') {
+  } if (hash === '#/postTemplate') {
     return showTemplate(hash);
   }
   return showTemplate(hash);
