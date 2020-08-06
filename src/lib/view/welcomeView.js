@@ -1,4 +1,4 @@
-export const login = () => {
+export const welcome = () => {
   const divlogIn = document.createElement('div');
   const viewLogIn = `
   <h2>Bievenida a</h2>
@@ -13,7 +13,8 @@ export const login = () => {
       <a id="linkRecover" href="#/recoverPassword">¿Olvidate tu contraseña?</a> <br>
       <br><button type="submit" class="btnSignUp">Enviar</button><br><br>
       <h4>o ingresa con tu Cuenta</h4>
-      <input id="gmailLogo" type="image" src ="imagenes/gmailLogo.png" name="" value="">
+      <input  id="gmailLogo" type="image" src ="imagenes/gmailLogo.png" name="" value=""><br><br>
+      <a id="linkRecover" href="#/register">Si no tienes cuenta registraste</a> <br>
       </div>`;
   divlogIn.innerHTML = viewLogIn;
   return divlogIn;

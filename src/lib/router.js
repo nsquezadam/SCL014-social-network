@@ -1,29 +1,41 @@
 // nos traemos las  constante de las views
 import { recover } from './view/recoverPassword.js';
-import { logIn } from './view/welcomeView.js';
+import { welcome } from './view/welcomeView.js';
 import { accountCreation } from './view/register.js';
 
-const showView = (hash) => {
+
+const showTemplate = (hash) => {
   const containerRoot = document.getElementById('root');
-  containerRoot.innerHTML = recover();
+  containerRoot.innerHTML = welcome();
   switch (hash) {
     case '#/':
-      containerRoot.appendChild(logIn());
+      containerRoot.appendChild(welcome());
       break;
-    case '#/personajes':
+    case '#/welcomeView':
+      containerRoot.appendChild(welcome());
+      break;
+    case '#/register':
       containerRoot.appendChild(accountCreation());
+      break;
+    case '#/recoverPassword':
+      containerRoot.appendChild(recover());
       break;
     default:
       containerRoot.innerHTML = `
-          <h2>no existe</h2>`;
+            <h2>no existe</h2>`;
       break;
   }
 };
+// se hace el ruteo de todas las paginas  a travez de hash
 export const changeRoute = (hash) => {
   if (hash === '#/') {
-    return showView(hash);
-  } if (hash === '#/creacioncuenta') {
-    return showView(hash);
+    return showTemplate(hash);
+  } if (hash === '#/welcomeView') {
+    return showTemplate(hash);
+  } if (hash === '#/recoverPassword') {
+    return showTemplate(hash);
+  } if (hash === '#/register') {
+    return showTemplate(hash);
   }
-  return showView(hash);
+  return showTemplate(hash);
 };
