@@ -2,11 +2,11 @@
 
 export const myFunction = () => {
   // aqui tu codigo
-  console.log('Hola mundo!');
+  // console.log ('Hola mundo!');
 };
 
 // login Google
-export const logIn =() => {
+export const logIn = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signInWithPopup(provider).then(function(result) {
       // This gives you a Google Access Token. You can use it to access the Google API.
