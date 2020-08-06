@@ -7,56 +7,45 @@ import { home } from './view/homeTemplate.js';
 import { post } from './view/postTemplate.js';
 
 /* Exportamos una constante que nos va cambiando las rutas, al cual le pasaremos el hash */
-
-export const changeRoute = (hash) => {
-    if (hash === '#/') {
-        return showTemplate(hash)
-    }
-    else if ( hash === '#/welcome') {
-        return showTemplate(hash)
-    }
-    else if ( hash === '#/home') {
-        return showTemplate(hash)
-    }
-    else if ( hash === '#/register') {
-        return showTemplate(hash)
-    }
-    else if ( hash === '#/recover') {
-        return showTemplate(hash)
-    }
-    else if ( hash === '#/post') {
-        return showTemplate(hash)
-    }
-    return showTemplate(hash)
-}
-
-
-
-
-export const showTemplate = (hash) => {
+const showTemplate = (hash) => {
   const containerRoot = document.getElementById('root');
   containerRoot.innerHTML = welcome();
-  
+
   switch (hash) {
     case '#/':
-    containerRoot.appendChild(welcome());
+      containerRoot.appendChild(welcome());
       break;
     case '#/SignUpTemplate':
-    containerRoot.appendChild(register());
+      containerRoot.appendChild(register());
       break;
     case '#/homeTemplate':
-        containerRoot.appendChild(home());
+      containerRoot.appendChild(home());
       break;
     case '#/RecoverpassTemplate':
-        containerRoot.appendChild(recover());
+      containerRoot.appendChild(recover());
       break;
     case '#/postTemplate':
-        containerRoot.appendChild(post());
+      containerRoot.appendChild(post());
       break;
-    default;
-      containerRoot.innerHTML =`<h2>Aca no ha nada solo una nebulosa negra</h2>
-
+    default:
+      containerRoot.innerHTML = '<h2>Aca no ha nada solo una nebulosa negra</h2>';
   }
+};
 
 
+export const changeRoute = (hash) => {
+  if (hash === '#/') {
+    return showTemplate(hash);
+  } if (hash === '#/welcome') {
+    return showTemplate(hash);
+  } if (hash === '#/home') {
+    return showTemplate(hash);
+  } if (hash === '#/register') {
+    return showTemplate(hash);
+  } if (hash === '#/recover') {
+    return showTemplate(hash);
+  } if (hash === '#/post') {
+    return showTemplate(hash);
+  }
+  return showTemplate(hash);
 };
