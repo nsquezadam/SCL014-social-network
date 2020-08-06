@@ -1,6 +1,10 @@
 /* creacion de nueva cuenta con  mail -contraseña */
 export const register = () => {
   const viewRegister = `
+    <div class="containerLogIn">
+    <div id="logoContainer"> 
+    <img src="images/witLogo.png" alt="Logo">
+    </div>
     <h1>Crea tu cuenta y accede a WiT</h1>
     <br> <br>
     <p>Nombre Completo</p>
@@ -22,6 +26,7 @@ export const register = () => {
     <input type="checkbox" id="conditions" required> Acepto condiciones de uso y reglas de comunidad </input>
     <br> <br>
     <input type="submit" id="createaccount" value="Crear Cuenta"></input>
+    </div>
   `;
   return viewRegister;
 };
