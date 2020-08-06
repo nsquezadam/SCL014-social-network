@@ -1,5 +1,5 @@
 export const welcome = () => {
-  /* const divWelcome = document.createElement('div') */
+  // const divWelcome = document.createElement('div');
   const viewWelcome = `
     <<h2>Bievenida a</h2>
     <div id="logoContainer">
@@ -10,10 +10,10 @@ export const welcome = () => {
       <form id="logInForm">  
         <input type="mail" id="logIn-mail" class="infoBox" placeholder="Ingresa tu mail" required> <br><br>
         <input type="password" id="logIn-password" class="infoBox" placeholder="Contraseña" required><br>
-        <a id="linkRecover" href="#/recoverpassTemplate">¿Olvidate tu contraseña?</a> <br>
+        <a id="linkRecover" href="#/RecoverpassTemplate">¿Olvidate tu contraseña?</a> <br>
         <br><button type="submit" class="btnSignUp">Enviar</button><br><br>
         <h4>o ingresa con tu Cuenta</h4>
-        <input id="gmailLogo" type="image" src ="imagenes/gmailLogo.png" name="" value="">
+        <input id="gmailLogo" href="#/SignUpTemplate.js" type="image" src ="imagenes/gmailLogo.png" name="" value="">
     </div>`;
   // divWelcome.innerHTML = viewWelcome;
   return viewWelcome;
