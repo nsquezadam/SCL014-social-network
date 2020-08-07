@@ -5,41 +5,50 @@
 }
 body{
     background-color: #faf7f8;
-    background-image: url(./imagenes/backgroundMovil.png);
+    background-image: url(./imagenes/backgroundFull.png);
     background-repeat: no-repeat;
     background-position:left bottom;
     background-attachment: fixed;
-    background-size: auto;
+    background-size: 50%;
     display:flex;
     color: #a64776;
-    margin: 20px;
+    margin: 0.625rem;
     text-align: center;
-    padding: 5px;
+    padding: 0.313rem;
 
 }  
+main{
+    
+}
 .btnSignUp{
     background-color: #82003e;
     color: #faf7f8;
     font-size: 11pt;
-    width: 84px;
-    height: 37px;
+    width: 5.25rem;
+    height: 2.313;
     border-style: none;
     border-radius: 70pt;
 }
-
+h1{
+font-size: 20pt;
+font-weight: 700;
+}
 h2{
     font-size: 12pt;
+    font-weight: 600;
 }
 h3{
     font-size: 10pt;
+    font-weight: 400;
 }
 h4{
     font-size: 8pt;
+    font-weight: 300;
 }
-.formControl{
-    justify-content: center
-    width: 200px;
-    height: 29px;
+.infoBox{
+    justify-content: center;
+    width: 12.5rem;
+    height: 1.5rem;
     background: #cdadbc;
     border-radius:70pt;
 
@@ -56,9 +65,13 @@ h4{
 }
 #logo{
     width:30%;
-    height:;
+    height:auto;
 }
 #gmailLogo{
     width: 20%;
     height: auto;
+}
+.containerLinkRegister{
+ float: right;
+}
   

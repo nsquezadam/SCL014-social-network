@@ -1,6 +1,6 @@
 // nos traemos las  constante de las views
-import { recover } from './view/recoverPassword.js';
-import { welcome } from './view/welcomeView.js';
+import { recover } from './view/recoverPassTemplate.js';
+import { welcome } from './view/welcomeTemplate.js';
 import { accountCreation } from './view/register.js';
 
 
@@ -11,13 +11,13 @@ const showTemplate = (hash) => {
     case '#/':
       containerRoot.appendChild(welcome());
       break;
-    case '#/welcomeView':
+    case '#/welcomeTemplate':
       containerRoot.appendChild(welcome());
       break;
     case '#/register':
       containerRoot.appendChild(accountCreation());
       break;
-    case '#/recoverPassword':
+    case '#/recoverPassTemplate':
       containerRoot.appendChild(recover());
       break;
     default:
@@ -30,9 +30,9 @@ const showTemplate = (hash) => {
 export const changeRoute = (hash) => {
   if (hash === '#/') {
     return showTemplate(hash);
-  } if (hash === '#/welcomeView') {
+  } if (hash === '#/welcomeTemplate') {
     return showTemplate(hash);
-  } if (hash === '#/recoverPassword') {
+  } if (hash === '#/recoverPassTemplate') {
     return showTemplate(hash);
   } if (hash === '#/register') {
     return showTemplate(hash);
