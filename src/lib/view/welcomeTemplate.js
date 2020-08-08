@@ -1,14 +1,12 @@
 export const welcome = () => {
   const divWelcome = document.createElement('div');
   const viewWelcome = `
-  <header>
+
   <h2>Bievenida a</h2>
   <div id="logoContainer">
   <img id="logo" src="imagenes/witLogo.png" alt="logo"> 
   </div>
   <h3>¡La red para mujeres en el mundo tech! </h3><br>
-  </header>
-  <main>
   <div class="containerForm">
       <form id="logInForm">  
       <input type="mail" id="logIn-mail" class="infoBox" placeholder="Ingresa tu mail" required> <br><br>
@@ -21,9 +19,9 @@ export const welcome = () => {
     <input  id="gmailLogo" type="image" src ="imagenes/gmailLogo.png" name="" value=""><br><br>
   </div>
   <div class="containerLinkRegister">
-    <a id="linkRecover" href="#/register">Si no tienes cuenta registraste</a> <br>
+    <a id="linkRecover" href="#/signUpTemplate">Si no tienes cuenta registraste</a> <br>
   </div>      
-  </main>`;
+`;
   divWelcome.innerHTML = viewWelcome;
   return divWelcome;
 };
