@@ -5,27 +5,29 @@ export const register = () => {
   <div id="logoContainer"> 
   <img src="images/witLogo.png" alt="Logo">
   </div>
-  <h1>Crea tu cuenta y accede a WiT</h1>
+  <h2>Crea tu cuenta y accede a WiT</h2>
   <br> <br>
-  <p>Nombre Completo</p>
+  <form class="signUpForm">
+  <label for="name">Nombre Completo</label><br>
   <input type="text" id="name" class="infoBox" required></input>
   <br> <br>
-  <p>Correo Electrónico</p>
+  <label for="email">Correo Electrónico</label><br>
   <input type="email" id="email" class="infoBox" required></input>
   <br> <br>
-  <p>Fecha de Nacimiento</p>
+  <label for="birthdate">Fecha de Nacimiento</label><br>
   <input type="date" id="birthdate" class="infoBox" required></input>
   <br> <br>
-  <p>Contraseña</p>
+  <label for="password">Contraseña</label><br>
   <input type="password" id="password" class="infoBox" required></input>
   <br> <br>
-  <p>Confirmar Contraseña</p>
+  <label for="password">Confirmar Contraseña</label>
+  <br>
   <input type="password" id="password" class="infoBox" required></input>
   <br> <br>
-  
   <input type="checkbox" id="conditions" required> Acepto condiciones de uso y reglas de comunidad </input>
   <br> <br>
   <input type="submit" id="createaccount" value="Crear Cuenta"></input>
+  </form>
   </div>
   `;
   divPersonalData.innerHTML = viewAccount;

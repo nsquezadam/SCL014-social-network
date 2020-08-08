@@ -8,9 +8,9 @@ import { post } from './view/postTemplate.js';
 
 const showTemplate = (hash) => {
   const containerRoot = document.getElementById('root');
-  containerRoot.appendChild(welcome());
+  containerRoot.innerHTML = '';
   switch (hash) {
-    case '#/':
+    case '':
       containerRoot.appendChild(welcome());
       break;
     case '#/recoverPassTemplate':
