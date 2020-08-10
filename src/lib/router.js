@@ -9,7 +9,7 @@ import { post } from './view/postTemplate.js';
 /* Exportamos una constante que nos va cambiando las rutas, al cual le pasaremos el hash */
 const showTemplate = (hash) => {
   const containerRoot = document.getElementById('root');
-  containerRoot.innerHTML = welcome();
+  containerRoot.innerHTML = '';
 
   switch (hash) {
     case '#/':

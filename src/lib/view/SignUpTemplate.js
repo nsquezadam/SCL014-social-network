@@ -1,9 +1,10 @@
 /* creacion de nueva cuenta con  mail -contraseña */
 export const register = () => {
+  const divRegister = document.createElement('div');
   const viewRegister = `
     <div class="containerLogIn">
-    <div id="logoContainer"> 
-    <img src="images/witLogo.png" alt="Logo">
+    <div id="logoContainer">
+    <img id="logo" src="imagenes/witLogo.png" alt="logo"> 
     </div>
     <h1>Crea tu cuenta y accede a WiT</h1>
     <br> <br>
@@ -28,5 +29,6 @@ export const register = () => {
     <input type="submit" id="createaccount" value="Crear Cuenta"></input>
     </div>
   `;
-  return viewRegister;
+  divRegister.innerHTML = viewRegister;
+  return divRegister;
 };

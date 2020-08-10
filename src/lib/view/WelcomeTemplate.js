@@ -1,5 +1,5 @@
 export const welcome = () => {
-  // const divWelcome = document.createElement('div');
+  const divWelcome = document.createElement('div');
   const viewWelcome = `
     <h2>Bievenida a</h2>
     <div id="logoContainer">
@@ -16,6 +16,6 @@ export const welcome = () => {
         <input id="gmailLogo" type="image" src ="imagenes/gmailLogo.png" name="" value="">
         <h4>Si no tienes cuenta <a href="#/SignUpTemplate">Registrate</a> </h4><br>
     </div>`;
-  // divWelcome.innerHTML = viewWelcome;
-  return viewWelcome;
+  divWelcome.innerHTML = viewWelcome;
+  return divWelcome;
 };
