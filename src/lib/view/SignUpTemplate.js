@@ -6,7 +6,7 @@ export const register = () => {
     <div id="logoContainer">
     <img id="logo" src="imagenes/witLogo.png" alt="logo"> 
     </div>
-    <h1>Crea tu cuenta y accede a WiT</h1>
+    <h2>Crea tu cuenta y accede a WiT</h2>
     <br> <br>
     <p>Nombre Completo</p>
     <input type="text" id="name" class="infoBox" required></input>

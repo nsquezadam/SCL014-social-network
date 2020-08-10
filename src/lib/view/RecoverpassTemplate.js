@@ -6,7 +6,7 @@ export const recover = () => {
   <div id="logoContainer">
   <img id="logo" src="imagenes/witLogo.png" alt="logo"> 
   </div>
-<h1>Escribe tú correo electrónico y te enviaremos un link para reestablecer tu contraseña</h1>
+<h2>Escribe tú correo electrónico y te enviaremos un link para reestablecer tu contraseña</h2>
 <br> <br>
 <input type="email" id="email" class="infoBox" required></input>
 <br> <br>

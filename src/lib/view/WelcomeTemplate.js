@@ -10,8 +10,10 @@ export const welcome = () => {
       <form id="logInForm">  
         <input type="mail" id="logIn-mail" class="infoBox" placeholder="Ingresa tu mail" required> <br><br>
         <input type="password" id="logIn-password" class="infoBox" placeholder="Contraseña" required><br>
-        <a id="linkRecover" href="#/RecoverpassTemplate">¿Olvidaste tu contraseña?</a> <br>
-        <br><button type="submit" class="btnSignUp">Enviar</button><br><br>
+        <a id="linkRecover" href="#/RecoverpassTemplate"><br>
+        <h4>¿Olvidaste tu contraseña?</h4>
+        </a>
+        <br><button type="submit" class="btnSignUp">Enviar</button><br>
         <h4>o ingresa con tu Cuenta</h4>
         <input id="gmailLogo" type="image" src ="imagenes/gmailLogo.png" name="" value="">
         <h4>Si no tienes cuenta <a href="#/SignUpTemplate">Registrate</a> </h4><br>
