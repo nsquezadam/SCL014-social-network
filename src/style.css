@@ -5,22 +5,68 @@
 /* se trae imagen de fondo */
 body{
     background-image: url(./imagenes/backgroundMovil.png);
-    padding: 15px;
+    padding: 20px;
     background-repeat: no-repeat;
     background-position: left bottom;
-    background-size:auto;
+    background-size:45% auto;
     background-attachment:fixed ;
     text-align: center;
     color:#82003e;
 
 }
+ /* estilos  welcome template  */
+ .welcome{
+     justify-content: space-between;
+ }
 #logo {
-    width:25%;
+    width:30%;
     height: auto;
 }
+#logoContainer{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
 #gmailLogo{
-    width: 15%;
+    margin-top: 1rem;
+    width: 20%;
     height: auto;
+}
+.containerForm{
+    margin-bottom: 1rem;
+}
+.infoBox{
+    background: #CDADBC;
+    border-radius:70pt;
+    border-style: none;
+    text-align: center;
+    padding: 0.1rem;
+    width: 50%;
+
+}
+.linkRecover{
+    
+}
+.btnSignUp{
+    background: #82003E;
+    border-radius:70pt ;
+    border-style: none;
+    width: 30%;
+    height: auto;
+    color: #FAF8F7;
+    font-size:11pt ;
+    text-align: center;
+    padding: 0.3rem;
+    font-weight: 300;
+
+}
+.container{
+    margin-top: 2rem;
+    text-align: end;
+
+}
+/* estilos titulos y subtitulos */
+h1{
+    font-size: 14pt;
 }
 h2{
     font-size: 12pt;
@@ -30,7 +76,4 @@ h3{
 }
 h4{
     font-size: 8pt;
-}
-.btnSignUp{
-
 }
