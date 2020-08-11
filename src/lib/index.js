@@ -47,4 +47,32 @@ export const logInMail = (email, password) => {
     // [END_EXCLUDE]
   });
 
-}
+}; 
+
+/* Registro Usuarios con correo y password */
+
+export const registerUser = (email, password) => {
+  console.log(email, password);
+  firebase.auth().createUserWithEmailAndPassword(email, password)
+  .then(() => {
+    firebase.auth().currentUser.sendEmailVerification().then(function() {
+      // Email Verification sent!
+      // [START_EXCLUDE]
+      alert('Email Verification Sent!');
+      // [END_EXCLUDE]
+    })
+  })
+  .catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // [START_EXCLUDE]
+    if (errorCode == 'auth/weak-password') {
+      alert('The password is too weak.');
+    } else {
+      alert(errorMessage);
+    }
+    console.log(error);
+    // [END_EXCLUDE]
+  });
+};
