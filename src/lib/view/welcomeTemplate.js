@@ -1,3 +1,4 @@
+import {} from '../'
 export const welcome = () => {
   const divWelcome = document.createElement('div');
   const viewWelcome = `
