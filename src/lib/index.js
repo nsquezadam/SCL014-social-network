@@ -8,13 +8,16 @@ export const myFunction = () => {
 // login Google
 export const logIn = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
-  firebase.auth().signInWithPopup(provider).then(function (result) {
+  firebase.auth().signInWithPopup(provider)
+    .then(function (result) {
       // This gives you a Google Access Token. You can use it to access the Google API.
       var token = result.credential.accessToken;
       // The signed-in user info.
       var user = result.user;
+      console.log('estas logueado');
       // ...
-    }).catch(function (error) {
+    })
+    .catch(function (error) {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
@@ -24,6 +27,24 @@ export const logIn = () => {
       var credential = error.credential;
       // ...
     });
-    
-    return viewLogin 
 };
+
+/* Log In con Correo y Contraseña */
+export const logInMail = (email, password) => {
+  console.log (email, password);
+  firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // [START_EXCLUDE]
+    if (errorCode === 'auth/wrong-password') {
+      alert('Wrong password.');
+    } else {
+      alert(errorMessage);
+    }
+    console.log(error);
+    document.getElementById('quickstart-sign-in').disabled = false;
+    // [END_EXCLUDE]
+  });
+
+}

@@ -1,3 +1,5 @@
+import { logIn, logInMail } from '../index.js';
+
 export const welcome = () => {
   const divWelcome = document.createElement('div');
   const viewWelcome = `
@@ -14,10 +16,31 @@ export const welcome = () => {
         <h4>¿Olvidaste tu contraseña?</h4>
         </a>
         <br><button type="submit" class="btnSignUp">Enviar</button><br>
+      </form>
         <h4>o ingresa con tu Cuenta</h4>
         <input id="gmailLogo" type="image" src ="imagenes/gmailLogo.png" name="" value="">
         <h4>Si no tienes cuenta <a href="#/SignUpTemplate">Registrate</a> </h4><br>
     </div>`;
   divWelcome.innerHTML = viewWelcome;
+  /* Elementos  asociados a Login Gmail */
+  const gmail = divWelcome.querySelector('#gmailLogo');
+
+  gmail.addEventListener('click', () => {
+    logIn();
+  });
+
+  /* Elementos y eventos asocieados a login con correo */
+  const mail = divWelcome.querySelector('#logIn-mail');
+  const pass = divWelcome.querySelector('#logIn-password');
+  const form = divWelcome.querySelector('#logInForm');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    console.log('estoy escuchando');
+    const email = mail.value;
+    const password = pass.value;
+    logInMail(email, password);
+  });
+
   return divWelcome;
 };
