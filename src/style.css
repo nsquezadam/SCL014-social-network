@@ -9,19 +9,25 @@ body{
     padding: 20px;
     background-repeat: no-repeat;
     background-position: left bottom;
-    background-size:45% auto;
+    background-size:auto;
     background-attachment:fixed ;
     text-align: center;
-    color:#82003e;
+    color:#a64a76;
 
 }
  /* estilos  welcome template  */
  .welcome{
+     display: flex;
+     flex-direction: column;
      justify-content: space-between;
+    
+
+
  }
 #logo {
     width:30%;
     height: auto;
+    
 }
 #logoContainer{
     margin-top: 1rem;
@@ -33,7 +39,10 @@ body{
     height: auto;
 }
 .containerForm{
+    margin-top:1rem ;
     margin-bottom: 1rem;
+   
+
 }
 .infoBox{
     background: #CDADBC;
@@ -41,7 +50,9 @@ body{
     border-style: none;
     text-align: center;
     padding: 0.1rem;
-    width: 50%;
+    width: 12.439rem;
+    height: 1.70rem;
+    color: #82003E;
 
 }
 .linkRecover{
@@ -57,7 +68,7 @@ body{
     font-size:11pt ;
     text-align: center;
     padding: 0.3rem;
-    font-weight: 300;
+    font-weight:600;
 
 }
 .container{
@@ -77,4 +88,51 @@ h3{
 }
 h4{
     font-size: 8pt;
+}
+
+
+@media screen and (min-width:548px){
+    body{
+        background-image: url(./imagenes/backgroundMovil.png);
+        padding: 20px;
+        background-repeat: no-repeat;
+        background-position: left bottom;
+        background-size:40rem 100%;
+        background-attachment:fixed ;
+        text-align: center;
+        color:#a64a76;
+    }
+
+    .welcome{
+        display: flex;
+        flex-direction: column;
+        margin-left: 40rem;
+        
+ 
+    }
+    #logo {
+        width:12.688rem;
+        height: auto;
+        
+    }
+    #logoContainer{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    h1{
+        font-size: 18pt;
+    }
+    h2{
+        font-size: 14pt;
+    }
+    h3{
+        font-size: 2,8rem;
+    }
+    h4{
+        font-size: 10pt;
+    }
+
+   
+
 }

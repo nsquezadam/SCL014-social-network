@@ -8,9 +8,9 @@ export const welcome = () => {
    
     <h2>Bievenida a</h2>
     <div id="logoContainer">
-    <img id="logo" src="imagenes/witLogo.png" alt="logo"> 
+    <img id="logo" src="imagenes/witLogo1.png" alt="logo"> 
     </div>
-    <h2>¡La red para mujeres en el mundo tech! </h2><br>
+    <h3>¡La red para mujeres en el mundo tech! </h3><br>
     
     <div class="containerForm">
       <form id="logInForm">  
