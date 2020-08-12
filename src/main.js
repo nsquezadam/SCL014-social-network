@@ -6,7 +6,7 @@ import { welcome } from './lib/view/WelcomeTemplate.js';
 import { changeRoute } from './lib/router.js';
 
 const init = () => {
-  document.getElementById('root').innerHTML = welcome();
+ document.getElementById('root').appendChild(welcome());
   window.addEventListener('hashchange', () => {
     myFunction();
     // eslint-disable-next-line no-console
