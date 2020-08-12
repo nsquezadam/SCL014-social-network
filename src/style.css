@@ -1,0 +1,147 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+/* se trae imagen de fondo */
+body{
+    /* background-image: url(./imagenes/backgroundMovil.png); */
+    display: flex;
+    padding: 20px;
+    /* background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size:auto;
+    background-attachment:fixed ;*/
+    text-align: center;
+    color:#a64a76;
+
+}
+#backIma{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 42%;
+    height: auto;
+    
+   
+ 
+
+}
+
+ /* estilos  welcome template  */
+ .welcome{
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+
+
+
+ }
+#logo {
+    width:30%;
+    height: auto;
+
+}
+#logoContainer{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+#gmailLogo{
+    margin-top: 1rem;
+    width: 20%;
+    height: auto;
+}
+.containerForm{
+    margin-top:1rem ;
+    margin-bottom: 1rem;
+
+
+}
+.infoBox{
+    background: #CDADBC;
+    border-radius:70pt;
+    border-style: none;
+    text-align: center;
+    padding: 0.1rem;
+    width: 12.439rem;
+    height: 1.70rem;
+    color: #82003E;
+
+}
+.linkRecover{
+
+}
+.btnSignUp{
+    background: #82003E;
+    border-radius:70pt ;
+    border-style: none;
+    width: 30%;
+    height: auto;
+    color: #FAF8F7;
+    font-size:0.923rem ;
+    text-align: center;
+    padding: 0.3rem;
+    font-weight:600;
+
+}
+.container{
+    margin-top: 2rem;
+    text-align: end;
+
+}
+/* estilos titulos y subtitulos */
+h1{
+    font-size: 1,3rem;
+}
+h2{
+    font-size: 1,163rem;
+}
+h3{
+    font-size: 0,83rem;
+}
+h4{
+    font-size: 0,500rem;
+}
+h5{
+    font-size: 0.498rem;
+}
+
+
+@media screen and (min-width:548px){
+    
+
+    .welcome{
+        display: flex;
+        flex-direction: column;
+        margin-left: 40rem;
+
+
+    }
+    #logo {
+        width:12.688rem;
+        height: auto;
+
+    }
+    #logoContainer{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    h1{
+        font-size: 3,5rem;
+    }
+    h2{
+        font-size: 3,2rem;
+    }
+    h3{
+        font-size: 2,8rem;
+    }
+    h4{
+        font-size: 2,4rem;
+    }
+    h5{
+        font-size: 2,8rem;
+    }
+
+
+}
