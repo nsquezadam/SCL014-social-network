@@ -3,14 +3,15 @@ import { logIn, logInMail } from '../index.js';
 export const welcome = () => {
   const divWelcome = document.createElement('div');
   const viewWelcome = `
-    <div class="welcome">
-      
-   
-    <h2>Bievenida a</h2>
+    <div id="containerBackima">
+      <img id ="backIma" src="../imagenes/backgroundFull.png" alt="">
+    </div>
+    <div class="welcome">  
+    <h4>Bienvenida a</h4>
     <div id="logoContainer">
     <img id="logo" src="imagenes/witLogo1.png" alt="logo"> 
     </div>
-    <h3>¡La red para mujeres en el mundo tech! </h3><br>
+    <h4>¡La red para mujeres en el mundo tech! </h4><br>
     
     <div class="containerForm">
       <form id="logInForm">  
@@ -19,18 +20,18 @@ export const welcome = () => {
         <div class="linkRecover">
         <a id="linkRecover" href="#/RecoverpassTemplate"><br>  
         </div>
-        <h4>¿Olvidaste tu contraseña?</h4>
+        <h5>¿Olvidaste tu contraseña?</h5>
         </a>
         <br><button type="submit" class="btnSignUp">Enviar</button><br>
       </form>
       </div>
 
        <div>
-        <h4>o ingresa con tu Cuenta</h4>
+        <h5>o ingresa con tu Cuenta</h5>
         <input id="gmailLogo" type="image" src ="imagenes/gmailLogo.png" name="" value="">
         </div>
         <div class="container">
-        <h4>Si no tienes cuenta <a href="#/SignUpTemplate">Registrate</a> </h4><br>
+        <h5>Si no tienes cuenta <a href="#/SignUpTemplate">Registrate</a> </h5><br>
         </div>
         </div> `;
   divWelcome.innerHTML = viewWelcome;
