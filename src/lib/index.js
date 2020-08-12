@@ -1,3 +1,4 @@
+/* eslint-disable no-trailing-spaces */
 // aqui exportaras las funciones que necesites
 
 export const myFunction = () => {
@@ -15,6 +16,8 @@ export const logIn = () => {
       // The signed-in user info.
       const user = result.user;
       console.log('estas logueado');
+      window.location.hash = '#/homeTemplate';
+      document.getElementById('containerBackima').style.display = 'none';
       // ...
     })
     .catch((error) => {
@@ -32,20 +35,25 @@ export const logIn = () => {
 /* Log In con Correo y Contraseña */
 export const logInMail = (email, password) => {
   console.log(email, password);
-  firebase.auth().signInWithEmailAndPassword(email, password).catch((error) => {
+  firebase.auth().signInWithEmailAndPassword(email, password)
+    .then(() => 
+    { window.location.hash = '#/homeTemplate';
+      document.getElementById('containerBackima').style.display = 'none';
+    })
+    .catch((error) => {
     // Handle Errors here.
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // [START_EXCLUDE]
-    if (errorCode === 'auth/wrong-password') {
-      alert('Wrong password.');
-    } else {
-      alert(errorMessage);
-    }
-    console.log(error);
-    document.getElementById('quickstart-sign-in').disabled = false;
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // [START_EXCLUDE]
+      if (errorCode === 'auth/wrong-password') {
+        alert('Wrong password.');
+      } else {
+        alert(errorMessage);
+      }
+      console.log(error);
+      document.getElementById('quickstart-sign-in').disabled = false;
     // [END_EXCLUDE]
-  });
+    });
 };
 
 /* Registro Usuarios con correo y password */
