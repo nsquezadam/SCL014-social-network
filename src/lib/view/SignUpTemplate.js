@@ -1,4 +1,6 @@
-import { registerUser } from '../index.js';
+import {
+  registerUser,
+} from '../index.js';
 
 /* creacion de nueva cuenta con  mail -contraseña */
 
@@ -12,15 +14,14 @@ export const register = () => {
     <h2>Crea tu cuenta y accede a WiT</h2>
     <br> <br>
     <div>
-       <form id="registerForm">
-         <p>Correo Electrónico</p>
-         <input type="email" id="email" class="infoBox" required></input>
-         <br> <br>
-    
-         <p>Contraseña</p>
-         <input type="password" id="password" class="infoBox" required></input>
-         <br> <br>
-         <button type="submit" id="createaccount" value="Crear Cuenta">Crear Cuenta</button>
+      <form id="registerForm">
+        <p>Correo Electrónico</p>
+        <input type="email" id="email" class="infoBox" required></input>
+        <br> <br>
+        <p>Contraseña</p>
+        <input type="password" id="password" class="infoBox" required></input>
+        <br> <br>
+        <button type="submit" id="createaccount" value="Crear Cuenta">Crear Cuenta</button>
         </form> 
     </div>
 

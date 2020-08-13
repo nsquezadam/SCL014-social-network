@@ -16,8 +16,9 @@ export const logIn = () => {
       // The signed-in user info.
       const user = result.user;
       console.log('estas logueado');
+      // document.getElementById('containerBackima').style.display = 'none';
       window.location.hash = '#/homeTemplate';
-      document.getElementById('containerBackima').style.display = 'none';
+      
       // ...
     })
     .catch((error) => {
@@ -36,9 +37,9 @@ export const logIn = () => {
 export const logInMail = (email, password) => {
   console.log(email, password);
   firebase.auth().signInWithEmailAndPassword(email, password)
-    .then(() => 
-    { window.location.hash = '#/homeTemplate';
-      document.getElementById('containerBackima').style.display = 'none';
+    .then(() => { 
+      window.location.hash = '#/homeTemplate';
+      // document.getElementById('containerBackima').style.display = 'none';
     })
     .catch((error) => {
     // Handle Errors here.
