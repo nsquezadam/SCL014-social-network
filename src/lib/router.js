@@ -15,20 +15,20 @@ const showTemplate = (hash) => {
     case '#/':
       containerRoot.appendChild(welcome());
       break;
-    case '#/SignUpTemplate':
+    case '#/SignUp':
       containerRoot.appendChild(register());
       break;
-    case '#/homeTemplate':
+    case '#/home':
       containerRoot.appendChild(home());
       break;
-    case '#/RecoverpassTemplate':
+    case '#/Recoverpass':
       containerRoot.appendChild(recover());
       break;
-    case '#/postTemplate':
+    case '#/post':
       containerRoot.appendChild(post());
       break;
     default:
-      containerRoot.innerHTML = '<h2>Aca no ha nada solo una nebulosa negra</h2>';
+      containerRoot.innerHTML = '<h2>Aca no hay nada, solo una nebulosa negra</h2>';
   }
 };
 
@@ -36,15 +36,15 @@ const showTemplate = (hash) => {
 export const changeRoute = (hash) => {
   if (hash === '#/') {
     return showTemplate(hash);
-  } if (hash === '#/WelcomeTemplate') {
+  } if (hash === '#/Welcome') {
     return showTemplate(hash);
-  } if (hash === '#/homeTemplate') {
+  } if (hash === '#/home') {
     return showTemplate(hash);
-  } if (hash === '#/SignUpTemplate') {
+  } if (hash === '#/SignUp') {
     return showTemplate(hash);
-  } if (hash === '#/RecoverPassTemplate') {
+  } if (hash === '#/RecoverPass') {
     return showTemplate(hash);
-  } if (hash === '#/postTemplate') {
+  } if (hash === '#/post') {
     return showTemplate(hash);
   }
   return showTemplate(hash);

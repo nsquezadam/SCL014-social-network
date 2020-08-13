@@ -17,7 +17,7 @@ export const logIn = () => {
       const user = result.user;
       console.log('estas logueado');
       // document.getElementById('containerBackima').style.display = 'none';
-      window.location.hash = '#/homeTemplate';
+      window.location.hash = '#/home';
       
       // ...
     })
@@ -38,7 +38,7 @@ export const logInMail = (email, password) => {
   console.log(email, password);
   firebase.auth().signInWithEmailAndPassword(email, password)
     .then(() => { 
-      window.location.hash = '#/homeTemplate';
+      window.location.hash = '#/home';
       // document.getElementById('containerBackima').style.display = 'none';
     })
     .catch((error) => {
@@ -47,7 +47,7 @@ export const logInMail = (email, password) => {
       const errorMessage = error.message;
       // [START_EXCLUDE]
       if (errorCode === 'auth/wrong-password') {
-        alert('Wrong password.');
+        alert('Contraseña erronea.');
       } else {
         alert(errorMessage);
       }
@@ -67,7 +67,7 @@ export const registerUser = (email, password) => {
         .then(() => {
         // Email Verification sent!
         // [START_EXCLUDE]
-          alert('Email Verification Sent!');
+          alert('Correo de verificación enviado. Haz click en el link del correo y podras ingresar a WiT.');
         // [END_EXCLUDE]
         });
     })
@@ -77,7 +77,7 @@ export const registerUser = (email, password) => {
       const errorMessage = error.message;
       // [START_EXCLUDE]
       if (errorCode === 'auth/weak-password') {
-        alert('The password is too weak.');
+        alert('La contraseña es muy débil.');
       } else {
         alert(errorMessage);
       }
