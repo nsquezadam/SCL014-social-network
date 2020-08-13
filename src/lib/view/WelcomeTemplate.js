@@ -22,7 +22,7 @@ export const welcome = () => {
         </div>
         <h5>¿Olvidaste tu contraseña?</h5>
         </a>
-        <br><button type="submit" class="btnSignUp">Enviar</button><br>
+        <br><button type="submit" class="btnSignUp">Ingresar</button><br>
       </form>
       </div>
 
@@ -31,7 +31,7 @@ export const welcome = () => {
         <input id="gmailLogo" type="image" src ="imagenes/gmailLogo.png" name="" value="">
         </div>
         <div class="container">
-        <h5>Si no tienes cuenta <a href="#/SignUpTemplate">Registrate</a> </h5><br>
+        <h5>Si no tienes cuenta <a href="#/SignUp">Registrate</a> </h5><br>
         </div>
         </div> `;
   divWelcome.innerHTML = viewWelcome;
