@@ -59,11 +59,17 @@ export const logInMail = (email, password) => {
 
 /* Registro Usuarios con correo y password */
 
-export const registerUser = (email, password) => {
-  console.log(email, password);
+export const registerUser = (nameUser, email, password) => {
+  console.log(nameUser, email, password);
   firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then(() => {
-      firebase.auth().currentUser.sendEmailVerification()
+    .then((result) => {
+      result.user.updateProfile({
+        displayName: nameUser,
+      });
+      const configuration = {
+        url: 'http://localhost:5000/',
+      };
+      firebase.auth().currentUser.sendEmailVerification(configuration)
         .then(() => {
         // Email Verification sent!
         // [START_EXCLUDE]

@@ -1,5 +1,6 @@
 /* Aqui van los post de los usuarios */
 export const post = () => {
+  const divPost = document.createElement('div');
   const viewPost = `
     <header>
         <input type="image" src="images/witLogo.png">
@@ -22,5 +23,5 @@ export const post = () => {
         </ul>
     </nav>
   `;
-  return viewPost;
+  return divPost;
 };
