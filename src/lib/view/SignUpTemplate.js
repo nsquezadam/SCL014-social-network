@@ -9,7 +9,7 @@ export const register = () => {
   const viewRegister = `
   <header>
   <div id="logoContainer">
-      <img id="logo" src="imagenes/witLogo.png" alt="logo">
+      <img id="logo" src="imagenes/witLogo1.png" alt="logo">
   </div>
 </header>
 <main class="mainRegister">
