@@ -1,39 +1,41 @@
-import { logIn, logInMail } from '../index.js';
+import {
+  logIn,
+  logInMail
+} from '../index.js';
 
 export const welcome = () => {
   const divWelcome = document.createElement('div');
   const viewWelcome = `
-    <div id="containerBackima">
-      <img id ="backIma" src="../imagenes/backgroundFull.png" alt="">
-    </div>
-    <div class="welcome">  
-    <h4>Bienvenida a</h4>
+    <header>
     <div id="logoContainer">
     <img id="logo" src="imagenes/witLogo1.png" alt="logo"> 
     </div>
-    <h4>¡La red para mujeres en el mundo tech! </h4><br>
+    </header>
+    <main class="welcome">
+   
+    <h4>Bienvenida a</h4>
+    <h5>¡La red para mujeres en el mundo tech! </h5>
+    <section class="containerForm">
     
-    <div class="containerForm">
       <form id="logInForm">  
-        <input type="mail" id="logIn-mail" class="infoBox" placeholder="Ingresa tu mail" required> <br><br>
-        <input type="password" id="logIn-password" class="infoBox" placeholder="Contraseña" required>
+        <input type="mail" id="logIn-mail" class="infoBox" placeholder="Ingresa tu mail" required autofocus/> <br><br>
+        <input type="password" id="logIn-password" class="infoBox" placeholder="Contraseña" required />
         <div class="linkRecover">
-        <a id="linkRecover" href="#/RecoverpassTemplate"><br>  
+        <a id="linkRecover" href="#/recoverpass"><br>  
         </div>
         <h5>¿Olvidaste tu contraseña?</h5>
         </a>
-        <br><button type="submit" class="btnSignUp">Ingresar</button><br>
-      </form>
-      </div>
-
-       <div>
-        <h5>o ingresa con tu Cuenta</h5>
+        <br><button type="submit" class="btnSignUp">Ingresar</button><br><br>
+        </form>
+        <div>
+        <br><h4>o ingresa con tu Cuenta</h4>
         <input id="gmailLogo" type="image" src ="imagenes/gmailLogo.png" name="" value="">
         </div>
-        <div class="container">
-        <h5>Si no tienes cuenta <a href="#/SignUp">Registrate</a> </h5><br>
+        <div class="containerRegister">
+        <h3>Si no tienes cuenta <a href="#/signUp" >Registrate</a> </h3><br>
         </div>
-        </div> `;
+        </section>
+        </main> `;
   divWelcome.innerHTML = viewWelcome;
   /* Elementos  asociados a Login Gmail */
   const gmail = divWelcome.querySelector('#gmailLogo');
@@ -49,12 +51,20 @@ export const welcome = () => {
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
+
     // eslint-disable-next-line no-console
     console.log('estoy escuchando');
+    const user = firebase.auth().currenUser;
+    if (user) {
+      // eslint-disable-next-line no-console
+      console.log('user');
+    } else {
+      // eslint-disable-next-line no-alert
+      alert('Favor ingresar a sesion');
+    }
     const email = mail.value;
     const password = pass.value;
     logInMail(email, password);
   });
-
   return divWelcome;
 };
