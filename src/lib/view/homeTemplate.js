@@ -1,4 +1,4 @@
-import { post, logOut } from '../index.js';
+import { post, logOut, viewPost } from '../index.js';
 
 /* Aquí las publicaciones (TimeLine) Muro */
 
@@ -51,59 +51,42 @@ export const home = () => {
           <button type="submit" id="btnPost" class="btnPost"> Publicar </button>
       </form>
   </div>
-  <div class="viewPost" id="viewPost">
-      <div class="imageUser">
-          <img id="photo" src="imagenes/iconos/userPhoto.png" alt="Foto">
-      </div>
-      <div>
-          <p id="title" class="postTitle"></p>
-      </div>
-      <div>
-          <p id="textPost" class="description"></p>
-      </div>
-      <div>
-          <input type="image" id="heartLikes" src="imagenes/iconos/IconHeart.png" alt="Like">
-      </div>
-  </div>
+  <div class="viewPost" id="viewPost"> </div>
 </main>
 `;
-    divHome.innerHTML = viewHome;
-    const body = document.querySelector('body');
-    body.style.backgroundImage = 'none';
-    const postWrite = divHome.querySelector('#newPost');
-    postWrite.addEventListener('click', () => {
-        // e.preventDefault();
-        divHome.querySelector('#userPost').style.display = 'block';
-    });
-    // Aplicar la función post
-    const form = divHome.querySelector('#postForm');
-    form.addEventListener('submit', (e) => {
-        console.log('form');
-        e.preventDefault();
-        // Vamos a declarar el valor de las variables
+  divHome.innerHTML = viewHome;
+  /* Ocultar imagen background */
+  const body = document.querySelector('body');
+  body.style.backgroundImage = 'none';
+  /* Para que con el icono más, se puede ver container para hacer post */
+  const postWrite = divHome.querySelector('#newPost');
+  postWrite.addEventListener('click', () => {
+  // e.preventDefault();
+    divHome.querySelector('#userPost').style.display = 'block';
+  });
+  // Aplicar la función post
+  const form = divHome.querySelector('#postForm');
+  form.addEventListener('submit', (e) => {
+    console.log('form');
+    e.preventDefault();
+    // Vamos a declarar el valor de las variables
+    const title = divHome.querySelector('#postTitle').value;
+    const description = divHome.querySelector('#description').value;
+    // console.log(title, description);
+    // Vamos a llamar a la función y le vamos a entregar las variables descritas
+    post(title, description);
+    /* Al apretar btn publicar, desaparezca container para hacer post */
+    divHome.querySelector('#userPost').style.display = 'none';
+});
 
-        const title = divHome.querySelector('#postTitle').value;
-        const description = divHome.querySelector('#description').value;
-        // console.log(title, description);
-        // Vamos a llamar a la función y le vamos a entregar las variables descritas
-        post(title, description);
-    });
+  // Declaramos variable para Log out
+  const exit = divHome.querySelector('#exit');
+  // Definimos el evento
+  exit.addEventListener('click', (e) => {
+    e.preventDefault();
+    logOut();
+  });
+  viewPost();
 
-    // Declaramos variable para Log out 
-
-    const exit = divHome.querySelector('#exit');
-
-    // Definimos el evento
-
-    exit.addEventListener('click', (e) => {
-        e.preventDefault();
-        logOut();
-    });
-
-
-
-    
-
-    return divHome;
+  return divHome;
 };
-
