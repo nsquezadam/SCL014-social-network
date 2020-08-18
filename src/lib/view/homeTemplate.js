@@ -5,19 +5,19 @@ export const home = () => {
   const viewHome = `
   <header class="postHeader">
   <div id="logoPost">
-      <a href="#/"><img src="imagenes/witLogo1.png" alt="logo"></a>
+      <a href="#/"><img  id="logo1"src="imagenes/witLogo1.png" alt="logo"></a>
   </div>
   <div class="search">
       <input id="search" type="search" placeholder="Buscar">
   </div>
   <div>
-      <input type="image" id="exit" src="imagenes/iconos/iconLogout1.png">
+      <input type="image" id="exit" src="imagenes/iconos/iconLogout1.png"/>
   </div>
 </header>
 <nav class="icons">
   <a href="#/" class="iconbox"><img src="imagenes/iconos/iconHome.png" alt="Home" class="icon"></a>
   <a href="" class="iconbox"><img src="imagenes/iconos/iconBriefcase2.png" alt="Trabajos" class="icon"></a>
-  <a href="#/" class="iconbox"><img src="imagenes/iconos/iconPlus.png" alt="Post" class="icon"></a>
+  <a  class="iconbox"><img id="newPost" src="imagenes/iconos/iconPlus.png" alt="Post" class="icon"></a>
   <a href="" class="iconbox"><img src="imagenes/iconos/iconLaptop1.png" alt="Cursos" class="icon"></a>
   <a href="" class="iconbox"><img src="imagenes/iconos/iconBell1.png" alt="Notificaciones" class="icon"></a>
 </nav>
@@ -66,5 +66,12 @@ export const home = () => {
 </main>
 `;
   divHome.innerHTML = viewHome;
+  const body = document.querySelector('body');
+  body.style.backgroundImage = 'none';
+  const postWrite = divHome.querySelector('#newPost');
+  postWrite.addEventListener('click', () => {
+    // e.preventDefault();
+    divHome.querySelector('#userPost').style.display = 'block';
+  });
   return divHome;
 };
