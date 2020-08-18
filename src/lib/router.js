@@ -4,7 +4,7 @@ import { welcome } from './view/WelcomeTemplate.js';
 import { recover } from './view/RecoverpassTemplate.js';
 import { register } from './view/SignUpTemplate.js';
 import { home } from './view/homeTemplate.js';
-import { post } from './view/postTemplate.js';
+import { createPost } from './view/postTemplate.js';
 
 /* Exportamos una constante que nos va cambiando las rutas, al cual le pasaremos el hash */
 const showTemplate = (hash) => {
@@ -25,7 +25,7 @@ const showTemplate = (hash) => {
       containerRoot.appendChild(recover());
       break;
     case '#/post':
-      containerRoot.appendChild(post());
+      containerRoot.appendChild(createPost());
       break;
     default:
       containerRoot.innerHTML = '<h2>Aca no hay nada, solo una nebulosa negra</h2>';
