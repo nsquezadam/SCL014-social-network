@@ -51,7 +51,7 @@ export const home = () => {
           <button type="submit" id="btnPost" class="btnPost"> Publicar </button>
       </form>
   </div>
-  <div class="viewPost" id="viewPost"> </div>
+  <div  id="viewPost"> </div>
 </main>
 `;
   divHome.innerHTML = viewHome;

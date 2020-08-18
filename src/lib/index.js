@@ -5,7 +5,24 @@ export const myFunction = () => {
   // aqui tu codigo
   // console.log ('Hola mundo!');
 };
+// FUNCION OBSERVADOR  
 
+export const stateAuth = () => {
+  firebase.auth().onAuthStateChanged((user) => {
+    console.log(user);
+    //User is signed in.
+    if (user) {
+      window.location.hash = '#/home';
+      // ...
+    } else {
+      window.location.hash = '#/';
+      // User is signed out.
+      // ...
+    }
+    // console.log(user);
+
+  });
+};
 // login Google
 export const logIn = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
@@ -105,7 +122,7 @@ console.log(title, description);
     name: user.displayName,
     title: title,
     post: description,
-    fecha: firebase.firestore.FieldValue.serverTimestamp(),
+    fecha: new Date(),
     uid: user.uid,
 
   })
@@ -126,22 +143,35 @@ export const viewPost = () => {
     querySnapshot.forEach((doc) => {
       // console.log(`${doc.id} => ${doc.data()}`);
       const showPost = document.getElementById('viewPost');
+      //const fechapost = new Date(doc.data().fecha);  
       const templatePost = `
+        <div class="viewPost">
         <div class="imageUser">
           <img id="photo" src="imagenes/iconos/userPhoto.png" alt="Foto">
           <p>${doc.data().name}</p>
         </div>
         <div class ="postForm">
           <div>
-            <p id="title" class="postTitle">${doc.data().title}</p>
+            <p id="title" class="postTitle" >${doc.data().title}</p>
           </div>
           <div>
-            <p id="textPost" class="description">${doc.data().post}</p>
+            <p id="textPost" class="description" >${doc.data().post}</p>
           </div>
         </div>
+        
+         
+        <div class="boxIconPost">
+        <div>
+            <p id="textPost" class="date"> ${doc.data().fecha.toDate()}</p>
+          </div>
+        <div>
+        <input type="image" id="trash" class="trash" src="imagenes/iconos/iconTrash1.png" alt="Like">
+        </div>  
         <div>
           <input type="image" id="heartLikes" src="imagenes/iconos/IconHeart.png" alt="Like">
         </div>
+        </div>
+       
         `;
       showPost.innerHTML += templatePost;
     });
