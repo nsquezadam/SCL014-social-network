@@ -5,7 +5,21 @@ export const myFunction = () => {
   // aqui tu codigo
   // console.log ('Hola mundo!');
 };
+export const stateAuth = () => {
+  firebase.auth().onAuthStateChanged((user) => {
+    // User is signed in.
+    if (user) {
+      window.location.hash = '#/home'
+      // ...
+    } else {
+      window.location.hash = '#/'
+      // User is signed out.
+      // ...
+    }
+    // console.log(user);
 
+  });
+};
 
 // login Google
 export const logIn = () => {
@@ -37,12 +51,6 @@ export const logIn = () => {
       const credential = error.credential;
       // ...
     });
-};
-export const stateAuth = () => {
-  firebase.auth().onAuthStateChanged((user) => {
-    // console.log(user);
-
-  });
 };
 
 /* Log In con Correo y Contraseña se modifica mensaje y se agrega avatar */
@@ -131,35 +139,50 @@ export const registerUser = (email, password, name) => {
       // [END_EXCLUDE]
     });
 };
+//  funcion postear  
 export const posts = (title, description) => {
   console.log(title, description);
   const fs = firebase.firestore();
   const usuario = () => firebase.auth().currentUser;
   const user = usuario();
   fs.collection('posts').add({
-    email: user.email, 
-    name: user.displayName,
-    titulo: title,
-    post: description,
-    uid: user.uid,
-    fecha: new Date(),
- })
+      email: user.email,
+      name: user.displayName,
+      titulo: title,
+      post: description,
+      uid: user.uid,
+      fecha: new Date(),
+    })
     .then((docRef) => {
       console.log('Document written with ID: ', docRef.id);
-})
+    })
     .catch((error) => {
-    console.error('Error adding document: ', error);
-});
+      console.error('Error adding document: ', error);
+    });
 };
-/*
-expor const postView = () => {
+//
+export const postView = () => {
   const fs = firebase.firestore();
   fs.collection('posts').get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-        //console.log(`${doc.id} => ${doc.data().name}`);
-        const viewed = documen.getElementByID('div');
+      // console.log(`${doc.id} => ${doc.data().name}`);
+      const viewed = document.getElementByID('div');
 
     });
-});
-
-} */
+  });
+};
+export const logout = () => {
+  firebase.auth()
+    .signOut()
+    .then(() => {
+      // eslint-disable-next-line no-console
+      console.log('logout');
+      // eslint-disable-next-line no-alert
+      alert('Vuelve Pronto', 4000);
+      window.location.hash = '#/';
+    })
+    .catch((error) => {
+      // eslint-disable-next-line no-alert
+      alert('Error Vuelve a intentarlo', 4000);
+    });
+}

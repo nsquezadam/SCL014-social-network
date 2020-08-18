@@ -54,7 +54,8 @@ export const welcome = () => {
 
     // eslint-disable-next-line no-console
     console.log('estoy escuchando');
-    const user = firebase.auth().currenUser;
+    const user = firebase.auth().currentUser;
+
     if (user) {
       // eslint-disable-next-line no-console
       console.log('user');

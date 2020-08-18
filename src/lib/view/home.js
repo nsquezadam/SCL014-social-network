@@ -1,5 +1,5 @@
 /* Aquí las publicaciones (TimeLine) Muro */
-import { posts } from '../index.js';
+import { posts, logout } from '../index.js';
 
 export const home = () => {
   const divHome = document.createElement('div');
@@ -89,25 +89,12 @@ export const home = () => {
     const description = divHome.querySelector('#description').value;
     console.log(title, description);
     posts(title, description);
-   
   });
 
   const logOut = divHome.querySelector('#exit');
-  logOut.addEventListener('click', (e) => {
-    e.preventDefault();
-    firebase.auth()
-      .signOut()
-      .then(() => {
-        // eslint-disable-next-line no-console
-        console.log('logout');
-        // eslint-disable-next-line no-alert
-        alert('Vuelve Pronto', 4000);
-        window.location.hash = '#/';
-      })
-      .catch((error) => {
-        // eslint-disable-next-line no-alert
-        alert('Error Vuelve a intentarlo', 4000);
-      });
+  logOut.addEventListener('click', () => {
+    //e.preventDefault();
+   logout();
   });
 
   return divHome;
