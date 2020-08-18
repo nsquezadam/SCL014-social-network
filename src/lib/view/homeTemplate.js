@@ -1,4 +1,4 @@
-import { post } from '../index.js';
+import { post, logOut } from '../index.js';
 
 /* Aquí las publicaciones (TimeLine) Muro */
 
@@ -88,6 +88,20 @@ export const home = () => {
         // Vamos a llamar a la función y le vamos a entregar las variables descritas
         post(title, description);
     });
+
+    // Declaramos variable para Log out 
+
+    const exit = divHome.querySelector('#exit');
+
+    // Definimos el evento
+
+    exit.addEventListener('click', (e) => {
+        e.preventDefault();
+        logOut();
+    });
+
+
+
     return divHome;
 };
 

@@ -128,3 +128,18 @@ export const viewPost = () => {
     });
 });
 };
+
+// Función Log out
+
+export const logOut = () => {
+
+  firebase.auth().signOut().then(() => {
+    console.log('logOut');
+    alert('Vuelve pronto', 4000);
+    window.location.hash = '#/';
+
+  })
+  .catch((error) => {
+    alert('Vuelve a intentarlo', 4000);
+  });
+};
