@@ -6,29 +6,32 @@
 
 /* se trae imagen de fondo */
 body {
-  background-image: url(./imagenes/backgroundFull.png); 
+  background-image: url(./imagenes/backgroundFull.png);
   display: flex;
   background-repeat: no-repeat;
   background-position: left bottom;
-  background-size:45vw;
-  background-attachment:fixed ;
+  background-size: 45vw;
+  background-attachment: fixed;
   text-align: center;
   color: #a64a76;
   justify-content: center;
 }
-header #logocontainer{
+
+header #logocontainer {
   display: flex;
   margin-top: 1rem;
   margin-bottom: 1rem;
   margin-right: 30vw;
   margin-left: 45vw;
 }
+
 #logo {
   padding-top: 1rem;
   padding-bottom: 1rem;
-    width: 30vw;
-    height: auto;
-  }
+  width: 30vw;
+  height: auto;
+}
+
 /* estilos  welcome template  */
 main .welcome {
   display: flex;
@@ -74,7 +77,7 @@ main .welcome {
   width: 30vw;
   height: auto;
   color: #FAF8F7;
-  font-size:5vw;
+  font-size: 5vw;
   text-align: center;
   padding: 0.3rem;
   font-weight: 600;
@@ -86,24 +89,45 @@ main .welcome {
   text-align: right;
   margin-right: 5vw;
   font-size: 3vw;
-  
+
 }
+
 /* estilos para view home y post  */
 
-.userPost{
+.userPost {
   display: none;
   width: 90vw;
   height: 110vw;
   margin-top: 10vw;
   margin-left: 5vw;
-  margin-right: 5vw; 
+  margin-right: 5vw;
   border: 1px solid #CDADBC;
   border-radius: 30pt 0 0 0;
   box-shadow: 2px 4px 3px 2px #e4d5dc;
 
 
 }
-.viewPost{
+
+.viewPost {
+
+  width: 90vw;
+  height: 110vw;
+  margin-top: 10vw;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  border: 1px solid #CDADBC;
+  border-radius: 30pt 0 0 0;
+  box-shadow: 2px 4px 3px 2px #e4d5dc;
+}
+
+/* iconos de post  */
+.boxIconPost{
+  margin-top: 1vw;
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-end;
+  margin-right: 4vw;
+
   
   width: 90vw;
   height: 110vw;
@@ -116,7 +140,27 @@ main .welcome {
 
 
 }
-.postHeader  {
+
+.trash{
+    
+  width:3.8vw;
+  margin-right: 3vw;
+}
+
+#heartLikes {
+margin-right: 1vw;
+width: 4vw;
+}
+.date{
+left: 0;
+font-size: 2vw;
+text-align: left;
+margin-right: 10vw;
+
+}
+
+
+.postHeader {
   display: inline-flex;
   flex-direction: row;
   width: 100vw;
@@ -124,18 +168,19 @@ main .welcome {
   margin: 2vw;
   justify-content: space-between;
   padding-top: 3vw;
-} 
+}
 
-#logo1{
+#logo1 {
   width: 17vw;
   margin-left: 3vw;
   margin-top: 1vw;
 }
-#search{
+
+#search {
   align-self: center;
   text-align: center;
   margin-left: 15vw;
-  margin-right: 5vw ;
+  margin-right: 5vw;
   margin-top: 3vw;
   width: 50vw;
   height: 7vw;
@@ -146,26 +191,29 @@ main .welcome {
   color: #82003E;
 }
 
-#exit{
+#exit {
   width: 8vw;
   margin-right: 3vw;
   margin-top: 3vw;
 }
-#photo{
+
+#photo {
   width: 20vw;
   height: auto;
   margin-left: 0;
   margin-top: 0;
   border: 1px solid #CDADBC;
   border-radius: 90pt;
-   box-shadow:0px 3px 4px 0px #CBC3C1 ;
-  
+  box-shadow: 0px 3px 4px 0px #CBC3C1;
+
 }
-.postAsk{
+
+.postAsk {
   margin-top: 5vw;
   text-align: center;
   font-size: 3vw;
 }
+
 /* .postsUser{
   width: 90vw;
   height: 110vw;
@@ -178,19 +226,18 @@ main .welcome {
 
 
 } */
-.select{
+.select {
   width: 100%;
   display: inline-flex;
   justify-content: space-between;
 }
-.container_description{
+
+.container_description {
   width: 90vw;
   height: 90vw;
 }
-#heartikes{
-  align-self: flex-end;
-  width: 3vw;
-}
+
+
 .btnPost {
   margin-top: 5vw;
   background: #82003E;
@@ -205,7 +252,7 @@ main .welcome {
   font-weight: 600;
 }
 
-.postSelection{
+.postSelection {
   width: 30vw;
   margin-left: 2vw;
   display: inline-flex;
@@ -213,100 +260,112 @@ main .welcome {
   margin-right: 0;
 }
 
-#job{
+#job {
   width: 13vw;
   height: auto;
   margin-right: 3vw;
-  margin-top:0.5vw
+  margin-top: 0.5vw
 }
-#courses{
+
+#courses {
   width: 11.5vw;
-  
+
   height: auto;
 }
-#postTitle{
+
+.postTitle {
   text-align: center;
-  width:75vw ;
+  width: 75vw;
   height: 5vw;
   margin-top: 3vw;
-  border:1px solid #CDADBC ;
+  border: 1px solid #CDADBC;
   margin-bottom: 3vw;
 }
-.description{
+
+.description {
   text-align: center;
   width: 85vw;
-  height:70vw ;
-  border:1px solid #CDADBC;
+  height: auto;
+  border: 1px solid #CDADBC;
   font-size: 4vw;
-  
+
 }
-.icons  {
+
+.icons {
   display: inline-flex;
   height: 15vw;
   bottom: 0;
   justify-content: space-between;
   position: fixed;
   z-index: 10;
-  border-top:1px solid #CDADBC ;
+  border-top: 1px solid #CDADBC;
   padding-top: 1rem;
   left: 0;
   right: 0;
   background-color: #FAF8F7;
 }
-.iconbox{
-  width:19vw ;
-  height:auto;
+
+.iconbox {
+  width: 19vw;
+  height: auto;
   margin-bottom: 0;
 }
-.icon{
+
+.icon {
   width: 10vw;
   height: auto;
-  margin-bottom:0;
+  margin-bottom: 0;
   position: bottom;
 }
-#lapIco{
+
+#lapIco {
   width: 15vw;
 }
+
 /* estilos para signUp */
-section{
-  font-size:3vw ;
+section {
+  font-size: 3vw;
   width: 100vw;
 }
+
 section .registerForm {
-  
+
   font-size: 4vw;
 }
 
 /* responsive media query  */
-@media screen and ( min-width: 548px ) {
+@media screen and (min-width: 548px) {
 
   body {
-    background-image: url(./imagenes/backgroundFull.png); 
+    background-image: url(./imagenes/backgroundFull.png);
     display: flex;
-    background-repeat : no-repeat;
-    background-position: left bottom ;
-    background-size:43vw auto;
-    background-attachment:fixed ;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: 43vw auto;
+    background-attachment: fixed;
     text-align: center;
     color: #a64a76;
   }
-   header #logoContainer{
-   
-    margin-left: 50vw; 
+
+  header #logoContainer {
+
+    margin-left: 50vw;
   }
- .welcome{
+
+  .welcome {
     display: flex;
     flex-direction: column;
     margin-left: 50vw;
-    font-size:2vw ;
-    text-align: center; 
+    font-size: 2vw;
+    text-align: center;
   }
- .containerForm {
-    margin-top:3vw;
+
+  .containerForm {
+    margin-top: 3vw;
     margin-bottom: 1vw;
     font-size: 1vw;
   }
-  
+
   .infoBox {
     background: #CDADBC;
     border-radius: 70pt;
@@ -317,7 +376,7 @@ section .registerForm {
     height: 4vw;
     color: #82003E;
   }
-  
+
   .linkRecover {
     font-weight: 200;
     font-size: 1vw;
@@ -351,62 +410,153 @@ section .registerForm {
   }
 
 
+  .btnSignUp {
+    background: #82003E;
+    border-radius: 70pt;
+    border-style: none;
+    width: 15vw;
+    height: 4vw;
+    color: #FAF8F7;
+    font-size: 2vw;
+    text-align: center;
+    padding: 0.3rem;
+    font-weight: 600;
+    margin-top: 1vw;
+  }
+
+  #gmailLogo {
+    margin-top: 1rem;
+    width: 10vw;
+    height: auto;
+  }
+
+  .containerRegister {
+    margin-top: 2rem;
+
+    text-align: center;
+
+    font-size: 1.5vw;
+
+  }
+
+
   #logo {
     width: 10vw;
     height: auto;
-  } 
+  }
 
- .postHeader{
-   display: flex;
-   flex-direction: row;
+  .postHeader {
+    display: flex;
+    flex-direction: row;
     width: 50vw;
     height: 20vw;
     top: 0;
     margin-top: -3vw;
     box-shadow: 0px 6px 4px #CDADBC;
-    border-bottom:1px solid #CDADBC ;
+    border-bottom: 1px solid #CDADBC;
     position: fixed;
-    z-index: -1; 
+    z-index: -1;
     background-color: #FAF8F7;
   }
- nav{
-  isplay: flex;
-  flex-direction: row;
-   width: 50vw;
-   height: 20vw;
-   top: 0;
-   margin-top: -3vw;
-   box-shadow: 0px 6px 4px #CDADBC;
-   border-bottom:1px solid #CDADBC ;
-   position: fixed;
-   z-index: -1; 
-   background-color: #FAF8F7;
+
+  nav {
+    isplay: flex;
+    flex-direction: row;
+    width: 50vw;
+    height: 20vw;
+    top: 0;
+    margin-top: -3vw;
+    box-shadow: 0px 6px 4px #CDADBC;
+    border-bottom: 1px solid #CDADBC;
+    position: fixed;
+    z-index: -1;
+    background-color: #FAF8F7;
   }
 
-  .iconbox{
+  .iconbox {
     margin-top: 3vw;
-    width:6vw;
-    height:4vw;
+    width: 6vw;
+    height: 4vw;
     border-radius: 20pt;
-    box-shadow:  0px 5px 4px 0px #cbc3c1;
+    box-shadow: 0px 5px 4px 0px #cbc3c1;
     margin-right: 2px;
     padding: 2vw;
-    
+
   }
 
-.icon{
-  align-content: center;
-  width: 90%;
-  height: auto;
-  margin-bottom:0;
+  .icon {
+    align-content: center;
+    width: 90%;
+    height: auto;
+    margin-bottom: 0;
 
-}
+  }
 
-  #logo1{
-    margin-top:0º;
+  #logo1 {
+    margin-top: 0º;
     width: 15vw;
     margin-left: 0;
-   
+
+  }
+
+  #search {
+    margin-right: 60vwvw;
+    text-align: center;
+
+    margin-top: 3vw;
+    width: 15vw;
+    height: 3vw;
+    border-style: none;
+    background-color: #CDADBC;
+    border-radius: 50pt;
+    border: 1px solid #CDADBC;
+    color: #82003E;
+  }
+
+  #exit {
+    width: 4vw;
+    margin-top: 3vw;
+    margin-right: 50vw;
+  }
+
+  #photo {
+    width: 20vw;
+    height: auto;
+    margin-left: 0;
+    margin-top: 0;
+    border: 1px solid #CDADBC;
+    border-radius: 90pt;
+    box-shadow: 0px 3px 4px 0px #CBC3C1;
+
+  }
+
+  .postAsk {
+    margin-top: 5vw;
+    text-align: center;
+    font-size: 3vw;
+  }
+
+  .postsUser {
+    margin-top: 50vw;
+    width: 100vw;
+    height: 30vw;
+    margin-top: 10vw;
+    /* margin-left: 5vw;
+  margin-right: 5vw;  */
+  }
+
+  .select {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+  }
+
+  .container_description {
+    width: 90vw;
+    height: 90vw;
+
+
+
   }
   #search{
   margin-right: 60vwvw;
@@ -422,60 +572,19 @@ section .registerForm {
   color: #82003E;
 }
 
-#exit{
-  width: 4vw;
-  margin-top: 3vw;
-  margin-right: 50vw;
-}
-#photo{
-  width: 20vw;
-  height: auto;
-  margin-left: 0;
-  margin-top: 0;
-  border: 1px solid #CDADBC;
-  border-radius: 90pt;
-   box-shadow:0px 3px 4px 0px #CBC3C1 ;
-  
-}
-.postAsk{
-  margin-top: 5vw;
-  text-align: center;
-  font-size: 3vw;
-}
-.postsUser{
-  margin-top: 50vw;
-  width: 100vw;
-  height: 30vw;
-  margin-top: 10vw;
-  /* margin-left: 5vw;
-  margin-right: 5vw;  */
-}
-.select{
-  width: 100%;
-  display: inline-flex;
-  justify-content: space-between;
-}
-.container_description{
-  width: 90vw;
-  height: 90vw;
- 
-
- 
-}
-.btnPost {
-  margin-top: 5vw;
-  background: #82003E;
-  border-radius: 70pt;
-  border-style: none;
-  width: 40vw;
-  height: 10vw;
-  color: #FAF8F7;
-  font-size: 1w;
-  text-align: center;
-  padding: 0.3rem;
-  font-weight: 600;
-}
-  
+  .btnPost {
+    margin-top: 5vw;
+    background: #82003E;
+    border-radius: 70pt;
+    border-style: none;
+    width: 40vw;
+    height: 10vw;
+    color: #FAF8F7;
+    font-size: 1w;
+    text-align: center;
+    padding: 0.3rem;
+    font-weight: 600;
+  }
 
   .postSelection{
     width: 20vw;
@@ -531,10 +640,69 @@ section .registerForm {
     text-align: center;
    
 
-}
-.registerForm p{
-  margin-bottom: 1vw;
-  font-size:2vw ;
-  text-align: center;
-}
+  .postSelection {
+    width: 20vw;
+    margin-left: 2vw;
+    display: inline-flex;
+    margin-top: 3vw;
+    margin-right: 0;
+  }
+
+  #job {
+    width: 13vw;
+    height: auto;
+    margin-right: 3vw;
+    margin-top: 0.5vw
+  }
+
+  #courses {
+    width: 11.5vw;
+
+    height: auto;
+  }
+
+  #postTitle {
+    text-align: center;
+    width: 30vw;
+    height: 5vw;
+    margin-top: 3vw;
+    border: 1px solid #CDADBC;
+    margin-bottom: 3vw;
+  }
+
+  .description {
+    text-align: center;
+    width: 35vw;
+    height: 30vw;
+    border: 1px solid #CDADBC;
+    font-size: 4vw;
+
+  }
+
+  #lapIco {
+    width: 10vw;
+  }
+
+  /* responsinve signup */
+  .mainRegister {
+    margin-top: 3vw;
+    display: flex;
+
+    flex-direction: column;
+    margin-left: 50vw;
+    font-size: 1, 5vw;
+    text-align: center;
+  }
+
+  .registerForm {
+    margin-top: 1vw;
+    font-size: 2vw;
+    text-align: center;
+  }
+
+  .registerForm p {
+    margin-bottom: 1vw;
+    font-size: 2vw;
+    text-align: center;
+  }
 }

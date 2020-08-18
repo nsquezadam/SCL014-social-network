@@ -5,14 +5,17 @@ export const myFunction = () => {
   // aqui tu codigo
   // console.log ('Hola mundo!');
 };
+// FUNCION OBSERVADOR  
+
 export const stateAuth = () => {
   firebase.auth().onAuthStateChanged((user) => {
-    // User is signed in.
+    console.log(user);
+    //User is signed in.
     if (user) {
-      window.location.hash = '#/home'
+      window.location.hash = '#/home';
       // ...
     } else {
-      window.location.hash = '#/'
+      window.location.hash = '#/';
       // User is signed out.
       // ...
     }
@@ -20,7 +23,6 @@ export const stateAuth = () => {
 
   });
 };
-
 // login Google
 export const logIn = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
@@ -57,21 +59,10 @@ export const logIn = () => {
 
 export const logInMail = (email, password) => {
   console.log(email, password);
-  firebase.auth()
-    .signInWithEmailAndPassword(email, password)
-    .then((result) => {
-      if (result.user.emailVerified) {
-        // eslint-disable-next-line no-alert
-        alert(`Bienvenido ${result.user.displayName}`, 5000);
-        // eslint-disable-next-line no-undef
-        window.location.hash = '#/home';
-        // eslint-disable-next-line no-undef
-        // $('#photo').attr('src', '../imagenes/iconos/iconUser.png');
-      } else {
-        firebase.auth().signOut();
-        // eslint-disable-next-line no-alert
-        alert('Por favor realiza la verificacion de la cuenta', 5000);
-      }
+  firebase.auth().signInWithEmailAndPassword(email, password)
+    .then(() => {
+      window.location.hash = '#/home';
+      // document.getElementById('containerBackima').style.display = 'none';
     })
     .catch((error) => {
       // Handle Errors here.
@@ -84,7 +75,7 @@ export const logInMail = (email, password) => {
         alert(errorMessage);
       }
       console.log(error);
-      // document.getElementById('quickstart-sign-in').disabled = false;
+      document.getElementById('quickstart-sign-in').disabled = false;
       // [END_EXCLUDE]
     });
 };
@@ -92,23 +83,22 @@ export const logInMail = (email, password) => {
 /* Registro Usuarios con correo y password */
 /* modificado agregue nombre */
 
-export const registerUser = (email, password, name) => {
-  // console.log(email, password, name);
-  firebase
-    .auth()
-    .createUserWithEmailAndPassword(email, password)
+export const registerUser = (nameUser, email, password) => {
+  console.log(nameUser, email, password);
+  firebase.auth().createUserWithEmailAndPassword(email, password)
     .then((result) => {
       result.user.updateProfile({
-        displayName: name,
+        displayName: nameUser,
       });
       const configuration = {
         url: 'http://localhost:5000/',
       };
-      result.user.sendEmailVerification(configuration)
-        .catch((error) => {
-          // eslint-disable-next-line no-console
-          console.error(error);
-          alert(error.message, 4000);
+      firebase.auth().currentUser.sendEmailVerification(configuration)
+        .then(() => {
+          // Email Verification sent!
+          // [START_EXCLUDE]
+          alert('Correo de verificación enviado. Haz click en el link del correo y podras ingresar a WiT.');
+          // [END_EXCLUDE]
         });
       firebase.auth().signOut();
       window.location.hash = '#/';
@@ -123,7 +113,7 @@ export const registerUser = (email, password, name) => {
     //   alert(error.message, 4000)
     //     // eslint-disable-next-line no-shadow
     .catch((error) => {
-      // Handle Errors here;
+      // Handle Errors here.
       const errorCode = error.code;
       const errorMessage = error.message;
       // [START_EXCLUDE]
@@ -139,20 +129,24 @@ export const registerUser = (email, password, name) => {
       // [END_EXCLUDE]
     });
 };
-//  funcion postear  
-export const posts = (title, description) => {
-  console.log(title, description);
+
+// Función para postear
+
+export const post = (title, description) => {
+console.log(title, description);
   const fs = firebase.firestore();
   const usuario = () => firebase.auth().currentUser;
   const user = usuario();
-  fs.collection('posts').add({
-      email: user.email,
-      name: user.displayName,
-      titulo: title,
-      post: description,
-      uid: user.uid,
-      fecha: new Date(),
-    })
+  // 
+  fs.collection('post').add({
+    email: user.email,
+    name: user.displayName,
+    title: title,
+    post: description,
+    fecha: new Date(),
+    uid: user.uid,
+
+  })
     .then((docRef) => {
       console.log('Document written with ID: ', docRef.id);
     })
@@ -160,29 +154,62 @@ export const posts = (title, description) => {
       console.error('Error adding document: ', error);
     });
 };
-//
-export const postView = () => {
-  const fs = firebase.firestore();
-  fs.collection('posts').get().then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      // console.log(`${doc.id} => ${doc.data().name}`);
-      const viewed = document.getElementByID('div');
 
+// Función para mostrar Post
+
+export const viewPost = () => {
+
+  const fs = firebase.firestore();
+  fs.collection('post').get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      // console.log(`${doc.id} => ${doc.data()}`);
+      const showPost = document.getElementById('viewPost');
+      //const fechapost = new Date(doc.data().fecha);  
+      const templatePost = `
+        <div class="viewPost">
+        <div class="imageUser">
+          <img id="photo" src="imagenes/iconos/userPhoto.png" alt="Foto">
+          <p>${doc.data().name}</p>
+        </div>
+        <div class ="postForm">
+          <div>
+            <p id="title" class="postTitle" >${doc.data().title}</p>
+          </div>
+          <div>
+            <p id="textPost" class="description" >${doc.data().post}</p>
+          </div>
+        </div>
+        
+         
+        <div class="boxIconPost">
+        <div>
+            <p id="textPost" class="date"> ${doc.data().fecha.toDate()}</p>
+          </div>
+        <div>
+        <input type="image" id="trash" class="trash" src="imagenes/iconos/iconTrash1.png" alt="Like">
+        </div>  
+        <div>
+          <input type="image" id="heartLikes" src="imagenes/iconos/IconHeart.png" alt="Like">
+        </div>
+        </div>
+       
+        `;
+      showPost.innerHTML += templatePost;
     });
+});
+};
+
+// Función Log out
+
+export const logOut = () => {
+
+  firebase.auth().signOut().then(() => {
+    console.log('logOut');
+    alert('Vuelve pronto', 4000);
+    window.location.hash = '#/';
+
+  })
+  .catch((error) => {
+    alert('Vuelve a intentarlo', 4000);
   });
 };
-export const logout = () => {
-  firebase.auth()
-    .signOut()
-    .then(() => {
-      // eslint-disable-next-line no-console
-      console.log('logout');
-      // eslint-disable-next-line no-alert
-      alert('Vuelve Pronto', 4000);
-      window.location.hash = '#/';
-    })
-    .catch((error) => {
-      // eslint-disable-next-line no-alert
-      alert('Error Vuelve a intentarlo', 4000);
-    });
-}

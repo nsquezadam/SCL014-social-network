@@ -1,41 +1,37 @@
-import {
-  logIn,
-  logInMail
-} from '../index.js';
+import { logIn, logInMail, stateAuth } from '../index.js';
 
 export const welcome = () => {
   const divWelcome = document.createElement('div');
   const viewWelcome = `
-    <header>
-    <div id="logoContainer">
-    <img id="logo" src="imagenes/witLogo1.png" alt="logo"> 
-    </div>
-    </header>
-    <main class="welcome">
-   
-    <h4>Bienvenida a</h4>
-    <h5>¡La red para mujeres en el mundo tech! </h5>
-    <section class="containerForm">
-    
-      <form id="logInForm">  
-        <input type="mail" id="logIn-mail" class="infoBox" placeholder="Ingresa tu mail" required autofocus/> <br><br>
-        <input type="password" id="logIn-password" class="infoBox" placeholder="Contraseña" required />
-        <div class="linkRecover">
-        <a id="linkRecover" href="#/recoverpass"><br>  
-        </div>
-        <h5>¿Olvidaste tu contraseña?</h5>
-        </a>
-        <br><button type="submit" class="btnSignUp">Ingresar</button><br><br>
-        </form>
-        <div>
-        <br><h4>o ingresa con tu Cuenta</h4>
-        <input id="gmailLogo" type="image" src ="imagenes/gmailLogo.png" name="" value="">
-        </div>
-        <div class="containerRegister">
-        <h3>Si no tienes cuenta <a href="#/signUp" >Registrate</a> </h3><br>
-        </div>
-        </section>
-        </main> `;
+  <header>
+  <div id="logoContainer">
+      <img id="logo" src="imagenes/witLogo1.png" alt="logo">
+  </div>
+</header>
+<main class="welcome">
+  <h4>Bienvenida a</h4>
+  <h5>¡La red para mujeres en el mundo tech! </h5>
+
+  <section class="containerForm">
+      <form id="logInForm">
+          <input type="mail" id="logIn-mail" class="infoBox" placeholder="Ingresa tu mail" required> <br><br>
+          <input type="password" id="logIn-password" class="infoBox" placeholder="Contraseña" required>
+          <div class="linkRecover">
+              <a id="linkRecover" href="#/recoverpass"><br>
+          </div>
+          <h5>¿Olvidaste tu contraseña?</h5>
+          </a>
+          <br><button type="submit" class="btnSignUp">Ingresar</button><br>
+      </form>
+      <div>
+          <h5>o ingresa con tu Cuenta</h5>
+          <input id="gmailLogo" type="image" src="imagenes/gmailLogo.png" name="" value="">
+      </div>
+      <div class="containerRegister">
+          <h5>Si no tienes cuenta <a href="#/SignUp">Registrate</a> </h5><br>
+      </div>
+  </section>
+</main>`;
   divWelcome.innerHTML = viewWelcome;
   /* Elementos  asociados a Login Gmail */
   const gmail = divWelcome.querySelector('#gmailLogo');
@@ -66,6 +62,7 @@ export const welcome = () => {
     const email = mail.value;
     const password = pass.value;
     logInMail(email, password);
+    stateAuth();
   });
   return divWelcome;
 };
