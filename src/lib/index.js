@@ -91,3 +91,28 @@ export const registerUser = (nameUser, email, password) => {
       // [END_EXCLUDE]
     });
 };
+
+// Función para postear
+
+export const post = (title, description) => {
+
+  const dBase = firebase.firestore();
+  const usuario = () => firebase.auth().currentUser;
+  const user = usuario ();
+// 
+dBase.collection('post').add({
+  email: user.email,
+  name: user.displayName,
+  titulo: title,
+  post: description,
+  fecha: new Date (),
+  uid: user.uid,
+
+});
+.then((docRef) => {
+  console.log('Document written with ID: ', docRef.id);
+})
+.catch((error) => {
+  console.error('Error adding document: ', error);
+});
+};
