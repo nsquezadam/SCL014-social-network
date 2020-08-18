@@ -116,3 +116,15 @@ console.log(title, description);
       console.error('Error adding document: ', error);
     });
 };
+
+// Función para mostrar Post
+
+export const viewPost = () => {
+
+  const fs = firebase.firestore();
+  fs.collection("post").get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data()}`);
+    });
+});
+};
