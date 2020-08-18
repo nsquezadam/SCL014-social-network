@@ -1,4 +1,4 @@
-import { logIn, logInMail } from '../index.js';
+import { logIn, logInMail, stateAuth } from '../index.js';
 
 export const welcome = () => {
   const divWelcome = document.createElement('div');
@@ -52,6 +52,7 @@ export const welcome = () => {
     const email = mail.value;
     const password = pass.value;
     logInMail(email, password);
+    stateAuth();
   });
 
   return divWelcome;
