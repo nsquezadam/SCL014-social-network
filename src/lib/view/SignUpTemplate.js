@@ -25,7 +25,7 @@ export const register = () => {
           <p>Contraseña</p>
           <input type="password" id="password" class="infoBox" required></input>
           <br> <br>
-          <button type="submit" id="createaccount" value="Crear Cuenta">Crear Cuenta</button>
+          <button class = "btnSignup" type="submit" id="createaccount" value="Crear Cuenta">Crear Cuenta</button>
       </form>
   </section>
 </main>

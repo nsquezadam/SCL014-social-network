@@ -1,8 +1,10 @@
+import { post } from '../index.js';
+
 /* Aquí las publicaciones (TimeLine) Muro */
 
 export const home = () => {
-  const divHome = document.createElement('div');
-  const viewHome = `
+    const divHome = document.createElement('div');
+    const viewHome = `
   <header class="postHeader">
   <div id="logoPost">
       <a href="#/"><img  id="logo1"src="imagenes/witLogo1.png" alt="logo"></a>
@@ -65,13 +67,27 @@ export const home = () => {
   </div>
 </main>
 `;
-  divHome.innerHTML = viewHome;
-  const body = document.querySelector('body');
-  body.style.backgroundImage = 'none';
-  const postWrite = divHome.querySelector('#newPost');
-  postWrite.addEventListener('click', () => {
-    // e.preventDefault();
-    divHome.querySelector('#userPost').style.display = 'block';
-  });
-  return divHome;
+    divHome.innerHTML = viewHome;
+    const body = document.querySelector('body');
+    body.style.backgroundImage = 'none';
+    const postWrite = divHome.querySelector('#newPost');
+    postWrite.addEventListener('click', () => {
+        // e.preventDefault();
+        divHome.querySelector('#userPost').style.display = 'block';
+    });
+    // Aplicar la función post
+    const form = divHome.querySelector('#postForm');
+    form.addEventListener('submit', (e) => {
+        console.log('form');
+        e.preventDefault();
+        // Vamos a declarar el valor de las variables
+
+        const title = divHome.querySelector('#postTitle').value;
+        const description = divHome.querySelector('#description').value;
+        // console.log(title, description);
+        // Vamos a llamar a la función y le vamos a entregar las variables descritas
+        post(title, description);
+    });
+    return divHome;
 };
+

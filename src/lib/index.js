@@ -18,7 +18,7 @@ export const logIn = () => {
       console.log('estas logueado');
       // document.getElementById('containerBackima').style.display = 'none';
       window.location.hash = '#/home';
-      
+
       // ...
     })
     .catch((error) => {
@@ -37,12 +37,12 @@ export const logIn = () => {
 export const logInMail = (email, password) => {
   console.log(email, password);
   firebase.auth().signInWithEmailAndPassword(email, password)
-    .then(() => { 
+    .then(() => {
       window.location.hash = '#/home';
       // document.getElementById('containerBackima').style.display = 'none';
     })
     .catch((error) => {
-    // Handle Errors here.
+      // Handle Errors here.
       const errorCode = error.code;
       const errorMessage = error.message;
       // [START_EXCLUDE]
@@ -53,7 +53,7 @@ export const logInMail = (email, password) => {
       }
       console.log(error);
       document.getElementById('quickstart-sign-in').disabled = false;
-    // [END_EXCLUDE]
+      // [END_EXCLUDE]
     });
 };
 
@@ -71,14 +71,14 @@ export const registerUser = (nameUser, email, password) => {
       };
       firebase.auth().currentUser.sendEmailVerification(configuration)
         .then(() => {
-        // Email Verification sent!
-        // [START_EXCLUDE]
+          // Email Verification sent!
+          // [START_EXCLUDE]
           alert('Correo de verificación enviado. Haz click en el link del correo y podras ingresar a WiT.');
-        // [END_EXCLUDE]
+          // [END_EXCLUDE]
         });
     })
     .catch((error) => {
-    // Handle Errors here.
+      // Handle Errors here.
       const errorCode = error.code;
       const errorMessage = error.message;
       // [START_EXCLUDE]
@@ -95,24 +95,24 @@ export const registerUser = (nameUser, email, password) => {
 // Función para postear
 
 export const post = (title, description) => {
-
-  const dBase = firebase.firestore();
+console.log(title, description);
+  const fs = firebase.firestore();
   const usuario = () => firebase.auth().currentUser;
-  const user = usuario ();
-// 
-dBase.collection('post').add({
-  email: user.email,
-  name: user.displayName,
-  titulo: title,
-  post: description,
-  fecha: new Date (),
-  uid: user.uid,
+  const user = usuario();
+  // 
+  fs.collection('post').add({
+    email: user.email,
+    name: user.displayName,
+    title: title,
+    post: description,
+    fecha: new Date(),
+    uid: user.uid,
 
-});
-.then((docRef) => {
-  console.log('Document written with ID: ', docRef.id);
-})
-.catch((error) => {
-  console.error('Error adding document: ', error);
-});
+  })
+    .then((docRef) => {
+      console.log('Document written with ID: ', docRef.id);
+    })
+    .catch((error) => {
+      console.error('Error adding document: ', error);
+    });
 };
