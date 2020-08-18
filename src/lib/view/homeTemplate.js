@@ -55,47 +55,38 @@ export const home = () => {
 </main>
 `;
   divHome.innerHTML = viewHome;
-    /* Ocultar imagen background */
-    const body = document.querySelector('body');
-    body.style.backgroundImage = 'none';
-    /* Para que con el icono más, se puede ver container para hacer post */
-    const postWrite = divHome.querySelector('#newPost');
-    postWrite.addEventListener('click', () => {
-        // e.preventDefault();
-        divHome.querySelector('#userPost').style.display = 'block';
-    });
-    // Aplicar la función post
-    const form = divHome.querySelector('#postForm');
-    form.addEventListener('submit', (e) => {
-        console.log('form');
-        e.preventDefault();
-        // Vamos a declarar el valor de las variables
+  /* Ocultar imagen background */
+  const body = document.querySelector('body');
+  body.style.backgroundImage = 'none';
+  /* Para que con el icono más, se puede ver container para hacer post */
+  const postWrite = divHome.querySelector('#newPost');
+  postWrite.addEventListener('click', () => {
+  // e.preventDefault();
+    divHome.querySelector('#userPost').style.display = 'block';
+  });
+  // Aplicar la función post
+  const form = divHome.querySelector('#postForm');
+  form.addEventListener('submit', (e) => {
+    console.log('form');
+    e.preventDefault();
+    // Vamos a declarar el valor de las variables
+    const title = divHome.querySelector('#postTitle').value;
+    const description = divHome.querySelector('#description').value;
+    // console.log(title, description);
+    // Vamos a llamar a la función y le vamos a entregar las variables descritas
+    post(title, description);
+    /* Al apretar btn publicar, desaparezca container para hacer post */
+    divHome.querySelector('#userPost').style.display = 'none';
+});
 
-        const title = divHome.querySelector('#postTitle').value;
-        const description = divHome.querySelector('#description').value;
-        // console.log(title, description);
-        // Vamos a llamar a la función y le vamos a entregar las variables descritas
-        post(title, description);
-        /* Al apretar btn publicar, desaparezca container para hacer post */
-        divHome.querySelector('#userPost').style.display = 'none';
-    });
+  // Declaramos variable para Log out
+  const exit = divHome.querySelector('#exit');
+  // Definimos el evento
+  exit.addEventListener('click', (e) => {
+    e.preventDefault();
+    logOut();
+  });
+  viewPost();
 
-    // Declaramos variable para Log out 
-
-    const exit = divHome.querySelector('#exit');
-
-    // Definimos el evento
-
-    exit.addEventListener('click', (e) => {
-        e.preventDefault();
-        logOut();
-    });
-
-    viewPost();
-
-
-    
-
-    return divHome;
+  return divHome;
 };
-

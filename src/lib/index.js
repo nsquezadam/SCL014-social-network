@@ -131,11 +131,13 @@ export const viewPost = () => {
           <img id="photo" src="imagenes/iconos/userPhoto.png" alt="Foto">
           <p>${doc.data().name}</p>
         </div>
-        <div>
-          <p id="title" class="postTitle">${doc.data().title}</p>
-        </div>
-        <div>
-          <p id="textPost" class="description">${doc.data().post}</p>
+        <div class ="postForm">
+          <div>
+            <p id="title" class="postTitle">${doc.data().title}</p>
+          </div>
+          <div>
+            <p id="textPost" class="description">${doc.data().post}</p>
+          </div>
         </div>
         <div>
           <input type="image" id="heartLikes" src="imagenes/iconos/IconHeart.png" alt="Like">
