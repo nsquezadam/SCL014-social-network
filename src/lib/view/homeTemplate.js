@@ -1,4 +1,4 @@
-import { post, logOut } from '../index.js';
+import { post, logOut, viewPost } from '../index.js';
 
 /* Aquí las publicaciones (TimeLine) Muro */
 
@@ -51,25 +51,14 @@ export const home = () => {
           <button type="submit" id="btnPost" class="btnPost"> Publicar </button>
       </form>
   </div>
-  <div class="viewPost" id="viewPost">
-      <div class="imageUser">
-          <img id="photo" src="imagenes/iconos/userPhoto.png" alt="Foto">
-      </div>
-      <div>
-          <p id="title" class="postTitle"></p>
-      </div>
-      <div>
-          <p id="textPost" class="description"></p>
-      </div>
-      <div>
-          <input type="image" id="heartLikes" src="imagenes/iconos/IconHeart.png" alt="Like">
-      </div>
-  </div>
+  <div class="viewPost" id="viewPost"> </div>
 </main>
 `;
-    divHome.innerHTML = viewHome;
+  divHome.innerHTML = viewHome;
+    /* Ocultar imagen background */
     const body = document.querySelector('body');
     body.style.backgroundImage = 'none';
+    /* Para que con el icono más, se puede ver container para hacer post */
     const postWrite = divHome.querySelector('#newPost');
     postWrite.addEventListener('click', () => {
         // e.preventDefault();
@@ -87,6 +76,8 @@ export const home = () => {
         // console.log(title, description);
         // Vamos a llamar a la función y le vamos a entregar las variables descritas
         post(title, description);
+        /* Al apretar btn publicar, desaparezca container para hacer post */
+        divHome.querySelector('#userPost').style.display = 'none';
     });
 
     // Declaramos variable para Log out 
@@ -100,6 +91,7 @@ export const home = () => {
         logOut();
     });
 
+    viewPost();
 
 
     

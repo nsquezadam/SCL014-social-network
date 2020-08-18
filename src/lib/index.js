@@ -105,7 +105,7 @@ console.log(title, description);
     name: user.displayName,
     title: title,
     post: description,
-    fecha: new Date(),
+    fecha: firebase.firestore.FieldValue.serverTimestamp(),
     uid: user.uid,
 
   })
@@ -122,9 +122,26 @@ console.log(title, description);
 export const viewPost = () => {
 
   const fs = firebase.firestore();
-  fs.collection("post").get().then((querySnapshot) => {
+  fs.collection('post').get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-        console.log(`${doc.id} => ${doc.data()}`);
+      // console.log(`${doc.id} => ${doc.data()}`);
+      const showPost = document.getElementById('viewPost');
+      const templatePost = `
+        <div class="imageUser">
+          <img id="photo" src="imagenes/iconos/userPhoto.png" alt="Foto">
+          <p>${doc.data().name}</p>
+        </div>
+        <div>
+          <p id="title" class="postTitle">${doc.data().title}</p>
+        </div>
+        <div>
+          <p id="textPost" class="description">${doc.data().post}</p>
+        </div>
+        <div>
+          <input type="image" id="heartLikes" src="imagenes/iconos/IconHeart.png" alt="Like">
+        </div>
+        `;
+      showPost.innerHTML += templatePost;
     });
 });
 };
