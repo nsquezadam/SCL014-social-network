@@ -175,7 +175,7 @@ export const viewPost = () => {
         `;
       showPost.innerHTML += templatePost;
     });
-});
+  });
 };
 
 // Función Log out

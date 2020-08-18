@@ -96,7 +96,7 @@ main .welcome {
 /* estilos para view home y post  */
 
 .userPost {
-  display: none;
+  display: block;
   width: 90vw;
   height: 110vw;
   margin-top: 10vw;
