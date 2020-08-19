@@ -12,17 +12,15 @@ export const home = () => {
   <div class="search">
       <input id="search" type="search" placeholder="Buscar">
   </div>
-  <div>
-      <input type="image" id="exit" src="imagenes/iconos/iconLogout1.png"/>
-  </div>
+  <nav class="icons">
+   <a href="#/" class="iconbox"><img src="imagenes/iconos/iconHome.png" alt="Home" class="icon"></a>
+   <a href="" class="iconbox"><img src="imagenes/iconos/iconBriefcase2.png" alt="Trabajos" class="icon"></a>
+   <a  class="iconbox"><img id="newPost" src="imagenes/iconos/iconPlus.png" alt="Post" class="icon"></a>
+   <a href="" class="iconbox"><img src="imagenes/iconos/iconLaptop1.png" alt="Cursos" class="icon"></a>
+   <a href="" class="iconbox"><img src="imagenes/iconos/iconLogout1.png" id ="exit" alt="exit" class="icon"></a>
+ </nav>
 </header>
-<nav class="icons">
-  <a href="#/" class="iconbox"><img src="imagenes/iconos/iconHome.png" alt="Home" class="icon"></a>
-  <a href="" class="iconbox"><img src="imagenes/iconos/iconBriefcase2.png" alt="Trabajos" class="icon"></a>
-  <a  class="iconbox"><img id="newPost" src="imagenes/iconos/iconPlus.png" alt="Post" class="icon"></a>
-  <a href="" class="iconbox"><img src="imagenes/iconos/iconLaptop1.png" alt="Cursos" class="icon"></a>
-  <a href="" class="iconbox"><img src="imagenes/iconos/iconBell1.png" alt="Notificaciones" class="icon"></a>
-</nav>
+
 <main class="postsUser">
   <div  id="viewPost"> </div>
 </main>
