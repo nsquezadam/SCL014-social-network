@@ -134,7 +134,13 @@ console.log(title, description);
     });
 };
 
+
+// Función para borrar post 
+const fs = firebase.firestore();
+const deletePost = (id) => fs.collection('post').doc(id).delete();
+
 // Función para mostrar Post
+
 
 export const viewPost = () => {
 
@@ -181,8 +187,10 @@ export const viewPost = () => {
       btnsDelete.forEach((btn) => {
         btn.addEventListener('click', async (e) => {
           console.log(e.target.dataset.id);
-        })
-      })
+          await deletePost(e.target.dataset.id);
+          console.log(deletePost());
+        });
+      });
     });
   });
 };
