@@ -28,7 +28,7 @@ header #logocontainer {
 #logo {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  width: 30vw;
+  width: 33vw;
   height: auto;
 }
 
@@ -62,8 +62,9 @@ main .welcome {
   text-align: center;
   padding: 0.1rem;
   width: 70vw;
-  height: 7vw;
+  height: 6vw;
   color: #82003E;
+  font-size: 3vw;
 }
 
 .linkRecover {
@@ -78,7 +79,7 @@ main .welcome {
   width: 30vw;
   height: auto;
   color: #FAF8F7;
-  font-size: 5vw;
+  font-size: 4vw;
   text-align: center;
   padding: 0.3rem;
   font-weight: 600;
@@ -89,7 +90,7 @@ main .welcome {
   justify-content: flex-end;
   text-align: right;
   margin-right: 5vw;
-  font-size: 3vw;
+  font-size: 3.5vw;
 
 }
 
@@ -110,15 +111,16 @@ main .welcome {
 }
 
 .viewPost {
-
+  display:inline-flex;
   width: 90vw;
-  height: 110vw;
+  height: auto;
   margin-top: 10vw;
   margin-left: 5vw;
   margin-right: 5vw;
   border: 1px solid #CDADBC;
   border-radius: 30pt 0 0 0;
   box-shadow: 2px 4px 3px 2px #e4d5dc;
+  font-size: 3vw;
 }
 
 /* iconos de post  */
@@ -136,11 +138,16 @@ main .welcome {
     
   width:3.8vw;
   margin-right: 3vw;
+  
 }
 
-#heartLikes {
+#heartLikes{
 margin-right: 1vw;
 width: 4vw;
+opacity:0.2;
+}
+#brief, #courses{
+  opacity:0.2;
 }
 .date{
 left: 0;
@@ -180,11 +187,12 @@ margin-right: 10vw;
   border-radius: 50pt;
   border: 1px solid #CDADBC;
   color: #82003E;
+  opacity: 0.2;
 }
 
 
 #photo {
-  width: 20vw;
+  width: 15vw;
   height: auto;
   margin-left: 0;
   margin-top: 0;
@@ -250,7 +258,8 @@ margin-right: 10vw;
   width: 13vw;
   height: auto;
   margin-right: 3vw;
-  margin-top: 0.5vw
+  margin-top: 0.5vw;
+  opacity:0.2;
 }
 
 #courses {
@@ -261,19 +270,25 @@ margin-right: 10vw;
 
 .postTitle {
   text-align: center;
-  width: 75vw;
+  width: 70vw;
   height: 5vw;
   margin-top: 3vw;
-  border: 1px solid #CDADBC;
+  /* border: 1px solid #CDADBC; */
   margin-bottom: 3vw;
+  margin-left:2vw;
+  font-weight: bold;
 }
 
 .description {
   text-align: center;
-  width: 85vw;
+  width: 70vw;
   height: auto;
   border: 1px solid #CDADBC;
-  font-size: 4vw;
+  font-size: 3vw;
+  margin-left:2vw;
+  font-weight: lighter;
+  background-color: #E3D3D9;
+  margin-right: 2vw;
 
 }
 
@@ -349,7 +364,7 @@ section .registerForm {
   .containerForm {
     margin-top: 3vw;
     margin-bottom: 1vw;
-    font-size: 1vw;
+    font-size: 2vw;
   }
 
 .viewPost {
@@ -371,8 +386,9 @@ section .registerForm {
     text-align: center;
     padding: 0.1rem;
     width: 30vw;
-    height: 4vw;
+    height: 2.5vw;
     color: #82003E;
+    font-size: 2vw;
   }
 
   .linkRecover {
@@ -411,7 +427,7 @@ section .registerForm {
 
 
   #logo {
-    width: 10vw;
+    width: 15vw;
     height: auto;
   }
 
@@ -473,6 +489,7 @@ section .registerForm {
     border-radius: 50pt;
     border: 1px solid #CDADBC;
     color: #82003E;
+    opacity: 0.2;
   }
 
 
@@ -543,7 +560,8 @@ section .registerForm {
     width: 13vw;
     height: auto;
     margin-right: 3vw;
-    margin-top: 0.5vw
+    margin-top: 0.5vw;
+    opacity:0.2;
   }
 
   #courses {

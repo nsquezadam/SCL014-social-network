@@ -143,7 +143,6 @@ const deletePost = (id) => fs.collection('post').doc(id).delete();
 
 
 export const viewPost = () => {
-
   const fs = firebase.firestore();
   fs.collection('post').get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
@@ -165,19 +164,18 @@ export const viewPost = () => {
           <div>
             <p id="textPost" class="description" >${doc.data().post}</p>
           </div>
-        </div>
-        
-         
-        <div class="boxIconPost">
-        <div>
-            <p id="textPost" class="date"> ${doc.data().fecha.toDate()}</p>
+          <div class="boxIconPost">
+          <div>
+              <p id="textPost" class="date"> ${doc.data().fecha.toDate()}</p>
+            </div>
+          <div>
+          <input type="image" id="trash" class="trash" data-id=${infoPost.id} src="imagenes/iconos/iconTrash1.png" alt="Like">
+          </div>  
+          <div>
+            <input type="image" id="heartLikes" src="imagenes/iconos/IconHeart.png"   alt="Like">
           </div>
-        <div>
-        <input type="image" id="trash" class="trash" data-id=${infoPost.id} src="imagenes/iconos/iconTrash1.png" alt="Like">
-        </div>  
-        <div>
-          <input type="image" id="heartLikes" src="imagenes/iconos/IconHeart.png" alt="Like">
         </div>
+       
         </div>
        
         `;

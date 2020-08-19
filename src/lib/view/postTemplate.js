@@ -32,7 +32,7 @@ export const createPost = () => {
           </div>
           <div class="postSelection">
               <div class="jobPost">
-                  <input type="image" id="job" src="imagenes/iconos/iconHandJob.png" alt="Trabajo">
+                  <input type="image" id="job" src="imagenes/iconos/iconHandJob.png" disabled:"disabled"alt="Trabajo">
               </div>
               <div class="coursesPost">
                   <input type="image" id="courses" src="imagenes/iconos/iconHandLaptop.png" alt="Cursos">
@@ -41,7 +41,7 @@ export const createPost = () => {
       </div>
       <form class="postForm" id="postForm">
           <div>
-              <input type="text" name="Title" id="postTitle" class="postTitle" placeholder="Título">
+              <input type="text" name="Title" id="postTitle" class="postTitle"  placeholder="Título">
           </div>
           <div>
               <textarea id="description" class="description" rows="3" placeholder="Descripción"></textarea>
