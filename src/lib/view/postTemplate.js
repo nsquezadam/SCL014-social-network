@@ -25,7 +25,7 @@ export const createPost = () => {
   <div id="userPost" class="userPost">
       <div class="select">
           <div class="imageUser">
-              <img id="photo" src="imagenes/iconos/userPhoto.png" alt="Foto">
+              <img id="photo" src="imagenes/iconos/iconUser.png" alt="Foto">
           </div>
           <div class="postAsk">
               <h5>¿Qué quieres compartir?</h5>

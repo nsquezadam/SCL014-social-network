@@ -15,8 +15,8 @@ export const home = () => {
   <nav class="icons">
    <a href="#/" class="iconbox"><img src="imagenes/iconos/iconHome.png" alt="Home"  class="icon"></a>
    <a class="iconbox"><img src="imagenes/iconos/iconBriefcase2.png" alt="Trabajos" id="brief" class="icon"></a>
-   <a href="" class="iconbox"><img id="newPost" src="imagenes/iconos/iconPlus.png" alt="Post" class="icon"></a>
-   <a class="iconbox"><img src="imagenes/iconos/iconLaptop1.png" alt="Cursos"id="courses" class="icon"></a>
+   <a class="iconbox"><img id="newPost" src="imagenes/iconos/iconPlus.png" alt="Post" class="icon"></a>
+   <a class="iconbox"><img src="imagenes/iconos/iconLaptop1.png" alt="Cursos"id="learning" class="icon"></a>
    <a href="" class="iconbox"><img src="imagenes/iconos/iconLogout1.png" id ="exit" alt="exit" class="icon"></a>
  </nav>
 </header>

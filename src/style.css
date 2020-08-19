@@ -104,7 +104,7 @@ main .welcome {
   margin-left: 5vw;
   margin-right: 5vw;
   border: 1px solid #CDADBC;
-  border-radius: 30pt 0 0 0;
+  border-radius: 10vw 0 0 0;
   box-shadow: 2px 4px 3px 2px #e4d5dc;
 
 
@@ -118,7 +118,7 @@ main .welcome {
   margin-left: 5vw;
   margin-right: 5vw;
   border: 1px solid #CDADBC;
-  border-radius: 30pt 0 0 0;
+  border-radius: 10vw 0 0 0;
   box-shadow: 2px 4px 3px 2px #e4d5dc;
   font-size: 3vw;
 }
@@ -142,18 +142,18 @@ main .welcome {
 }
 
 #heartLikes{
-margin-right: 1vw;
+
 width: 4vw;
 opacity:0.2;
 }
-#brief, #courses{
+#brief, #learning{
   opacity:0.2;
 }
 .date{
-left: 0;
+margin-left: 2vw;
 font-size: 2vw;
 text-align: left;
-margin-right: 10vw;
+margin-right: 5vw;
 
 }
 
@@ -197,8 +197,9 @@ margin-right: 10vw;
   margin-left: 0;
   margin-top: 0;
   border: 1px solid #CDADBC;
-  border-radius: 90pt;
+  border-radius: 30pt;
   box-shadow: 0px 3px 4px 0px #CBC3C1;
+  background-color: #FAF8F7;
 
 }
 
@@ -206,6 +207,7 @@ margin-right: 10vw;
   margin-top: 5vw;
   text-align: center;
   font-size: 3vw;
+  margin-left:3vw;
 }
 
 /* .postsUser{
@@ -221,9 +223,8 @@ margin-right: 10vw;
 
 } */
 .select {
-  width: 100%;
+  width: 90vw;
   display: inline-flex;
-  justify-content: space-between;
 }
 
 .container_description {
@@ -240,10 +241,10 @@ margin-right: 10vw;
   width: 40vw;
   height: 10vw;
   color: #FAF8F7;
-  font-size: 1w;
+  font-size: 1vw;
   text-align: center;
   padding: 0.3rem;
-  font-weight: 600;
+  font-weight: bold;
 }
 
 .postSelection {
@@ -260,12 +261,14 @@ margin-right: 10vw;
   margin-right: 3vw;
   margin-top: 0.5vw;
   opacity:0.2;
+  margin-left: 3vw;
 }
 
 #courses {
   width: 11.5vw;
 
   height: auto;
+  opacity: 0.2;
 }
 
 .postTitle {
@@ -370,14 +373,23 @@ section .registerForm {
 .viewPost {
 
   width: 90vw;
-  height: 110vw;
+  height: auto;
   margin-top: 25vw;
   margin-left: 5vw;
   margin-right: 5vw;
   border: 1px solid #CDADBC;
-  border-radius: 30pt 0 0 0;
+  border-radius: 10vw 0 0 0;
   box-shadow: 2px 4px 3px 2px #e4d5dc;
 }
+.date{
+  margin-left: 6vw;
+  font-size: 2vw;
+  text-align: left;
+  margin-right: 5vw;
+  margin-bottom: 2vw;
+ 
+ 
+  }
 
   .infoBox {
     background: #CDADBC;
@@ -499,8 +511,9 @@ section .registerForm {
     margin-left: 0;
     margin-top: 0;
     border: 1px solid #CDADBC;
-    border-radius: 90pt;
+    border-radius: 100pt;
     box-shadow: 0px 3px 4px 0px #CBC3C1;
+    background-color: #FAF8F7;
 
   }
 
@@ -508,6 +521,20 @@ section .registerForm {
     margin-top: 5vw;
     text-align: center;
     font-size: 3vw;
+  }
+
+  .userPost {
+    display: block;
+    width: 90vw;
+    height: 110vw;
+    margin-top: 25vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    border: 1px solid #CDADBC;
+    border-radius: 10vw 0 0 0;
+    box-shadow: 2px 4px 3px 2px #e4d5dc;
+  
+  
   }
 
   .postsUser {
@@ -520,9 +547,10 @@ section .registerForm {
   }
 
   .select {
-    width: 100%;
+    width: 70vw;
     display: inline-flex;
     justify-content: space-between;
+    margin-left: -20vw;
   }
 
   .container_description {
@@ -541,13 +569,11 @@ section .registerForm {
     width: 40vw;
     height: 10vw;
     color: #FAF8F7;
-    font-size: 1w;
+    font-size: 4vw;
     text-align: center;
     padding: 0.3rem;
-    font-weight: 600;
+    font-weight: bold;
   }
-
-
   .postSelection {
     width: 20vw;
     margin-left: 2vw;
@@ -562,31 +588,40 @@ section .registerForm {
     margin-right: 3vw;
     margin-top: 0.5vw;
     opacity:0.2;
+    margin-left: 3vw;
   }
 
   #courses {
     width: 11.5vw;
-
     height: auto;
+    opacity: 0.2;
   }
 
   #postTitle {
     text-align: center;
-    width: 30vw;
+    width: 50vw;
     height: 5vw;
     margin-top: 3vw;
-    border: 1px solid #CDADBC;
     margin-bottom: 3vw;
+    font-size: 3vw;
+
   }
 
   .description {
     text-align: center;
-    width: 35vw;
+    width: 60vw;
     height: 30vw;
     border: 1px solid #CDADBC;
-    font-size: 4vw;
+    font-size: 3vw;
+    margin-left: 6vw;
 
   }
+  #heartLikes{
+    margin-rigth:2vw;
+    width: 4vw;
+    opacity:0.2;
+
+    }
 
   #lapIco {
     width: 10vw;
