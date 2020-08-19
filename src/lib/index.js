@@ -176,6 +176,13 @@ export const viewPost = () => {
        
         `;
       showPost.innerHTML += templatePost;
+
+      const btnsDelete = showPost.querySelectorAll('.trash');
+      btnsDelete.forEach((btn) => {
+        btn.addEventListener('click', async (e) => {
+          console.log(e.target.dataset.id);
+        })
+      })
     });
   });
 };
