@@ -84,7 +84,7 @@ export const registerUser = (nameUser, email, password) => {
         displayName: nameUser,
       });
       const configuration = {
-        url: 'http://localhost:5000/',
+        url: 'https://jeniffergenoves.github.io/SCL014-social-network/src/#/home',
       };
       firebase.auth().currentUser.sendEmailVerification(configuration)
         .then(() => {
@@ -200,6 +200,7 @@ export const viewPost = () => {
 
 export const logOut = () => {
 
+
   firebase.auth().signOut().then(() => {
     console.log('logOut');
     alert('Vuelve pronto', 4000);
@@ -209,4 +210,5 @@ export const logOut = () => {
   .catch((error) => {
     alert('Vuelve a intentarlo', 4000);
   });
+
 };
