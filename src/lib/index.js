@@ -237,7 +237,8 @@ export const viewPost = () => {
       const post = doc.data();
       post.id = doc.id;
       // console.log(post);
-      showPost.innerHTML += `<div class="viewPost">
+      showPost.innerHTML += 
+      `<div class="viewPost">
         <div class="imageUser">
           <img id="photo" src="imagenes/iconos/userPhoto.png" alt="Foto">
           <p>${doc.data().name}</p>
@@ -249,9 +250,7 @@ export const viewPost = () => {
           <div>
             <p id="textPost" class="description" >${doc.data().post}</p>
           </div>
-        </div>
-        
-         
+        </div
         <div class="boxIconPost">
         <div>
             <p id="textPost" class="date"> ${doc.data().fecha.toDate()}</p>
@@ -260,7 +259,7 @@ export const viewPost = () => {
         <input type="image" id="edit" class="edit" data-id=${post.id} src="imagenes/iconos/iconEdit.png" alt="Like">
         </div>  
         <div>
-        <input type="image" id="trash" class="trash" data-id=${post.id} src="imagenes/iconos/iconTrash1.png" alt="Like">
+        <input type="image" id="trash" class="trash"  data-id=${post.id} src="imagenes/iconos/iconTrash1.png" alt="Like">
         </div>  
         <div>
           <input type="image" id="heartLikes" class="heartLikes" src="imagenes/iconos/IconHeart.png" alt="Like">
@@ -271,7 +270,7 @@ export const viewPost = () => {
       btnsDelete.forEach((btn) => {
         btn.addEventListener('click', async (e) => {
           // e.targe ara recoger datos  y data set propriedad para buscra id 
-          // console.log(e.target.dataset.id);
+          console.log(e.target.dataset.id);
           await deletePosts(e.target.dataset.id);
         });
       });
