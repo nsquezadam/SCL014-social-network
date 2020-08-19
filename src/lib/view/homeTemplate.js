@@ -13,7 +13,7 @@ export const home = () => {
       <input id="search" type="search" placeholder="Buscar">
   </div>
   <nav class="icons">
-   <a href="#/" class="iconbox"><img src="imagenes/iconos/iconHome.png" alt="Home" class="icon"></a>
+   <a href="#/home" class="iconbox"><img src="imagenes/iconos/iconHome.png" alt="Home" class="icon"></a>
    <a href="" class="iconbox"><img src="imagenes/iconos/iconBriefcase2.png" alt="Trabajos" class="icon"></a>
    <a  class="iconbox"><img id="newPost" src="imagenes/iconos/iconPlus.png" alt="Post" class="icon"></a>
    <a href="" class="iconbox"><img src="imagenes/iconos/iconLaptop1.png" alt="Cursos" class="icon"></a>
