@@ -141,6 +141,8 @@ export const viewPost = () => {
   const fs = firebase.firestore();
   fs.collection('post').get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
+      const infoPost = doc.data();
+      infoPost.id = doc.id;
       // console.log(`${doc.id} => ${doc.data()}`);
       const showPost = document.getElementById('viewPost');
       //const fechapost = new Date(doc.data().fecha);  
@@ -165,7 +167,7 @@ export const viewPost = () => {
             <p id="textPost" class="date"> ${doc.data().fecha.toDate()}</p>
           </div>
         <div>
-        <input type="image" id="trash" class="trash" src="imagenes/iconos/iconTrash1.png" alt="Like">
+        <input type="image" id="trash" class="trash" data-id=${infoPost.id} src="imagenes/iconos/iconTrash1.png" alt="Like">
         </div>  
         <div>
           <input type="image" id="heartLikes" src="imagenes/iconos/IconHeart.png" alt="Like">
