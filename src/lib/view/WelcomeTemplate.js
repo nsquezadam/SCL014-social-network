@@ -5,13 +5,12 @@ export const welcome = () => {
   const viewWelcome = `
   <header>
   <div id="logoContainer">
-      <img id="logo" src="imagenes/witLogo1.png" alt="logo">
+  <img id="logo" src="imagenes/witLogo1.png" alt="logo">
   </div>
-</header>
-<main class="welcome">
+  </header>
+  <main class="welcome">
   <h4>Bienvenida a</h4>
   <h5>¡La red para mujeres en el mundo tech! </h5>
-
   <section class="containerForm">
       <form id="logInForm">
           <input type="mail" id="logIn-mail" class="infoBox" placeholder="Ingresa tu mail" required> <br><br>

@@ -135,6 +135,7 @@ console.log(title, description);
 };
 
 
+
 // Función para borrar post 
 const fs = firebase.firestore();
 const deletePost = (id) => fs.collection('post').doc(id).delete();
@@ -143,7 +144,6 @@ const deletePost = (id) => fs.collection('post').doc(id).delete();
 
 
 export const viewPost = () => {
-
   const fs = firebase.firestore();
   fs.collection('post').onSnapshot((querySnapshot) => {
     const showPost = document.getElementById('viewPost');
@@ -156,7 +156,7 @@ export const viewPost = () => {
       const templatePost = `
         <div class="viewPost">
         <div class="imageUser">
-          <img id="photo" src="imagenes/iconos/userPhoto.png" alt="Foto">
+          <img id="photo" src="imagenes/iconos/iconUser.png" alt="Foto">
           <p>${doc.data().name}</p>
         </div>
         <div class ="postForm">
@@ -166,10 +166,7 @@ export const viewPost = () => {
           <div>
             <p id="textPost" class="description" >${doc.data().post}</p>
           </div>
-        </div>
-        
-         
-        <div class="boxIconPost">
+          <div class="boxIconPost">
         <div>
             <p id="textPost" class="date"> ${doc.data().fecha.toDate()}</p>
           </div>
@@ -179,6 +176,8 @@ export const viewPost = () => {
         <div>
           <input type="image" id="heartLikes" src="imagenes/iconos/IconHeart.png" alt="Like">
         </div>
+        </div>
+        
         </div>
        
         `;
@@ -197,18 +196,19 @@ export const viewPost = () => {
     });
   });
 };
-
 // Función Log out
 
 export const logOut = () => {
 
-  firebase.auth().signOut()
-    .then(() => {
-      console.log('logOut');
-      alert('Vuelve pronto', 4000);
-      window.location.hash = '#/';
-    })
-    .catch((error) => {
-      alert('Vuelve a intentarlo', 4000);
-    });
+
+  firebase.auth().signOut().then(() => {
+    console.log('logOut');
+    alert('Vuelve pronto', 4000);
+    window.location.hash = '#/';
+
+  })
+  .catch((error) => {
+    alert('Vuelve a intentarlo', 4000);
+  });
+
 };
