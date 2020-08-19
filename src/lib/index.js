@@ -84,7 +84,7 @@ export const registerUser = (nameUser, email, password) => {
         displayName: nameUser,
       });
       const configuration = {
-        url: 'http://localhost:5000/',
+        url: 'https://jeniffergenoves.github.io/SCL014-social-network/src/#/home',
       };
       firebase.auth().currentUser.sendEmailVerification(configuration)
         .then(() => {
@@ -145,12 +145,14 @@ const deletePost = (id) => fs.collection('post').doc(id).delete();
 export const viewPost = () => {
 
   const fs = firebase.firestore();
-  fs.collection('post').get().then((querySnapshot) => {
+  fs.collection('post').onSnapshot((querySnapshot) => {
+    
+    const showPost = document.getElementById('viewPost');
+    showPost.innerHTML = ' ';
     querySnapshot.forEach((doc) => {
       const infoPost = doc.data();
       infoPost.id = doc.id;
       // console.log(`${doc.id} => ${doc.data()}`);
-      const showPost = document.getElementById('viewPost');
       //const fechapost = new Date(doc.data().fecha);  
       const templatePost = `
         <div class="viewPost">
@@ -173,7 +175,7 @@ export const viewPost = () => {
             <p id="textPost" class="date"> ${doc.data().fecha.toDate()}</p>
           </div>
         <div>
-        <input type="image" id="trash" class="trash" data-id=${infoPost.id} src="imagenes/iconos/iconTrash1.png" alt="Like">
+        <input type="image"  id="trash" class="trash" data-id=${infoPost.id} src="imagenes/iconos/iconTrash1.png" alt="Like">
         </div>  
         <div>
           <input type="image" id="heartLikes" src="imagenes/iconos/IconHeart.png" alt="Like">
@@ -188,9 +190,11 @@ export const viewPost = () => {
         btn.addEventListener('click', async (e) => {
           console.log(e.target.dataset.id);
           await deletePost(e.target.dataset.id);
-          console.log(deletePost());
+          // window.location.hash = "#/home";
+          // location.reload();
         });
       });
+      // return showPost;
     });
   });
 };
@@ -199,13 +203,13 @@ export const viewPost = () => {
 
 export const logOut = () => {
 
-  firebase.auth().signOut().then(() => {
-    console.log('logOut');
-    alert('Vuelve pronto', 4000);
-    window.location.hash = '#/';
-
-  })
-  .catch((error) => {
-    alert('Vuelve a intentarlo', 4000);
-  });
+  firebase.auth().signOut()
+    .then(() => {
+      console.log('logOut');
+      alert('Vuelve pronto', 4000);
+      window.location.hash = '#/';
+    })
+    .catch((error) => {
+      alert('Vuelve a intentarlo', 4000);
+    });
 };
