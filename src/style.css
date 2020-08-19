@@ -41,6 +41,7 @@ main .welcome {
   width: 100vw;
   font-size: 4vw;
 }
+
 #gmailLogo {
   margin-top: 1rem;
   width: 15vw;
@@ -70,7 +71,7 @@ main .welcome {
   font-size: 1vw;
 }
 
-.btnSignUp  {
+.btnSignUp {
   background: #82003E;
   border-radius: 70pt;
   border-style: none;
@@ -127,27 +128,16 @@ main .welcome {
   flex-direction: row;
   justify-content:flex-end;
   margin-right: 4vw;
-
-  
-  width: 90vw;
-  height: 110vw;
-  margin-top: 10vw;
-  margin-left: 5vw;
-  margin-right: 5vw; 
-  border: 1px solid #CDADBC;
-  border-radius: 30pt 0 0 0;
-  box-shadow: 2px 4px 3px 2px #e4d5dc;
-
-
 }
-
+.edit{
+  width:4vw;
+  margin-right: 3vw;
+}
 .trash{
-    
   width:3.8vw;
   margin-right: 3vw;
 }
-
-#heartLikes {
+.heartLikes {
 margin-right: 1vw;
 width: 4vw;
 }
@@ -223,8 +213,6 @@ margin-right: 10vw;
   border: 1px solid #CDADBC;
   border-radius: 30pt 0 0 0;
   box-shadow: 2px 4px 3px 2px #e4d5dc;
-
-
 } */
 .select {
   width: 100%;
@@ -381,34 +369,6 @@ section .registerForm {
     font-weight: 200;
     font-size: 1vw;
   }
-  
-  .btnSignUp  {
-    background: #82003E;
-    border-radius: 70pt;
-    border-style: none;
-    width: 15vw;
-    height: 4vw;
-    color: #FAF8F7;
-    font-size:2vw;
-    text-align: center;
-    padding: 0.3rem;
-    font-weight: 600;
-    margin-top: 1vw;
-  }
-  #gmailLogo {
-    margin-top: 1rem;
-    width: 10vw;
-    height: auto;
-  }
-  .containerRegister {
-    margin-top: 2rem;
-    
-    text-align: center;
-  
-    font-size: 1.5vw;
-    
-  }
-
 
   .btnSignUp {
     background: #82003E;
@@ -558,19 +518,6 @@ section .registerForm {
 
 
   }
-  #search{
-  margin-right: 60vwvw;
-  text-align: center;
- 
-  margin-top: 3vw;
-  width: 15vw;
-  height: 3vw;
-  border-style: none;
-  background-color: #CDADBC;
-  border-radius: 50pt;
-  border: 1px solid #CDADBC;
-  color: #82003E;
-}
 
   .btnPost {
     margin-top: 5vw;
@@ -586,59 +533,6 @@ section .registerForm {
     font-weight: 600;
   }
 
-  .postSelection{
-    width: 20vw;
-    margin-left: 2vw;
-    display: inline-flex;
-    margin-top: 3vw;
-    margin-right: 0;
-  }
-  
-  #job{
-    width: 13vw;
-    height: auto;
-    margin-right: 3vw;
-    margin-top:0.5vw
-  }
-  #courses{
-    width: 11.5vw;
-    
-    height: auto;
-  }
-  #postTitle{
-    text-align: center;
-    width:30vw ;
-    height: 5vw;
-    margin-top: 3vw;
-    border:1px solid #CDADBC ;
-    margin-bottom: 3vw;
-  }
-  .description{
-    text-align: center;
-    width: 35vw;
-    height:30vw ;
-    border:1px solid #CDADBC;
-    font-size: 4vw;
-    
-  }
-  #lapIco{
-    width: 10vw;
-  }
-/* responsinve signup */
-  .mainRegister{
-    margin-top: 3vw;
-    display: flex;
-  
-    flex-direction: column;
-    margin-left: 50vw;
-    font-size:1,5vw ;
-    text-align: center; 
-  }
-   .registerForm{
-    margin-top: 1vw;
-    font-size:2vw ;
-    text-align: center;
-   
 
   .postSelection {
     width: 20vw;

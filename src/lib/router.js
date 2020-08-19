@@ -3,27 +3,25 @@
 import { welcome } from './view/welcome.js';
 import { recover } from './view/recoverpass.js';
 import { register } from './view/signUp.js';
-import { home } from './view/home.js';
+import { home } from './view/homeTemplate.js';
 import { post } from './view/postTemplate.js';
 
 /* Exportamos una constante que nos va cambiando las rutas, al cual le pasaremos el hash */
-
-
 const showTemplate = (hash) => {
-  const containerRoot = document.querySelector('#root');
+  const containerRoot = document.getElementById('root');
   containerRoot.innerHTML = '';
 
   switch (hash) {
     case '#/':
       containerRoot.appendChild(welcome());
       break;
-    case '#/signUp':
+    case '#/SignUp':
       containerRoot.appendChild(register());
       break;
     case '#/home':
       containerRoot.appendChild(home());
       break;
-    case '#/recoverpass':
+    case '#/Recoverpass':
       containerRoot.appendChild(recover());
       break;
     case '#/post':
@@ -38,13 +36,13 @@ const showTemplate = (hash) => {
 export const changeRoute = (hash) => {
   if (hash === '#/') {
     return showTemplate(hash);
-  } if (hash === '#/welcome') {
+  } if (hash === '#/Welcome') {
     return showTemplate(hash);
   } if (hash === '#/home') {
     return showTemplate(hash);
-  } if (hash === '#/signUp') {
+  } if (hash === '#/SignUp') {
     return showTemplate(hash);
-  } if (hash === '#/recoverPass') {
+  } if (hash === '#/RecoverPass') {
     return showTemplate(hash);
   } if (hash === '#/post') {
     return showTemplate(hash);

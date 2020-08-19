@@ -9,7 +9,7 @@ export const myFunction = () => {
 
 export const stateAuth = () => {
   firebase.auth().onAuthStateChanged((user) => {
-    console.log(user);
+    // console.log(user);
     //User is signed in.
     if (user) {
       window.location.hash = '#/home';
@@ -26,18 +26,13 @@ export const stateAuth = () => {
 // login Google
 export const logIn = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
-  firebase.auth()
-    .signInWithPopup(provider)
+  firebase.auth().signInWithPopup(provider)
     .then((result) => {
       // This gives you a Google Access Token. You can use it to access the Google API.
       const token = result.credential.accessToken;
       // The signed-in user info.
       const user = result.user;
-
-      // eslint-disable-next-line no-console
       console.log('estas logueado');
-      // eslint-disable-next-line no-alert
-      alert(`Bienvenido ${result.user.displayName}!!`, 4000);
       // document.getElementById('containerBackima').style.display = 'none';
       window.location.hash = '#/home';
 
@@ -55,8 +50,7 @@ export const logIn = () => {
     });
 };
 
-/* Log In con Correo y Contraseña se modifica mensaje y se agrega avatar */
-
+/* Log In con Correo y Contraseña */
 export const logInMail = (email, password) => {
   console.log(email, password);
   firebase.auth().signInWithEmailAndPassword(email, password)
@@ -81,7 +75,6 @@ export const logInMail = (email, password) => {
 };
 
 /* Registro Usuarios con correo y password */
-/* modificado agregue nombre */
 
 export const registerUser = (nameUser, email, password) => {
   console.log(nameUser, email, password);
@@ -100,38 +93,24 @@ export const registerUser = (nameUser, email, password) => {
           alert('Correo de verificación enviado. Haz click en el link del correo y podras ingresar a WiT.');
           // [END_EXCLUDE]
         });
-      firebase.auth().signOut();
-      window.location.hash = '#/';
-
-      // eslint-disable-next-line no-alert
-      alert(`Bienvenido ${name}, debes realizar el proceso de verificacion`, 4000);
     })
-    // .catch((error) => {
-    //   // eslint-disable-next-line no-console
-    //   console.error(error);
-    //   // eslint-disable-next-line no-alert
-    //   alert(error.message, 4000)
-    //     // eslint-disable-next-line no-shadow
     .catch((error) => {
       // Handle Errors here.
       const errorCode = error.code;
       const errorMessage = error.message;
       // [START_EXCLUDE]
       if (errorCode === 'auth/weak-password') {
-        // eslint-disable-next-line no-alert
         alert('La contraseña es muy débil.');
       } else {
-        // eslint-disable-next-line no-alert
         alert(errorMessage);
       }
-      // eslint-disable-next-line no-console
       console.log(error);
       // [END_EXCLUDE]
     });
 };
 
 // Función para postear
-
+/* 
 export const post = (title, description) => {
 console.log(title, description);
   const fs = firebase.firestore();
@@ -189,7 +168,7 @@ export const viewPost = () => {
         <input type="image" id="trash" class="trash" src="imagenes/iconos/iconTrash1.png" alt="Like">
         </div>  
         <div>
-          <input type="image" id="heartLikes" src="imagenes/iconos/IconHeart.png" alt="Like">
+          <input type="image" id="heartLikes" class="heartLikes" src="imagenes/iconos/IconHeart.png" alt="Like">
         </div>
         </div>
        
@@ -197,19 +176,130 @@ export const viewPost = () => {
       showPost.innerHTML += templatePost;
     });
 });
-};
+}; */
 
 // Función Log out
 
 export const logOut = () => {
 
   firebase.auth().signOut().then(() => {
-    console.log('logOut');
-    alert('Vuelve pronto', 4000);
-    window.location.hash = '#/';
+      console.log('logOut');
+      alert('Vuelve pronto', 4000);
+      window.location.hash = '#/';
 
-  })
-  .catch((error) => {
-    alert('Vuelve a intentarlo', 4000);
+    })
+    .catch((error) => {
+      alert('Vuelve a intentarlo', 4000);
+    });
+};
+//
+
+
+
+// post opcion 2 
+export const post = (title, description) => {
+  console.log(title, description);
+  const fs = firebase.firestore();
+  const usuario = () => firebase.auth().currentUser;
+  const user = usuario();
+  fs.collection('post').doc().set({
+    email: user.email,
+    name: user.displayName,
+    title: title,
+    post: description,
+    fecha: new Date(),
+    uid: user.uid,
+  });
+};
+// const fs = firebase.firestore();
+
+
+export const getPosts = () => {
+  const fs = firebase.firestore();
+  fs.collection('post').get();
+};
+
+const onGetPost = (callback) => fs.collection('post').onSnapshot(callback);
+
+const deletePosts = (id) => fs.collection('post').doc(id).delete();
+
+const getPost = (id) => fs.collection('post').doc(id).get();
+
+export const updatePost = (id, updatedPost) => fs.collection('post').doc(id).update(updatedPost);
+
+
+export const viewPost = () => {
+  onGetPost((querySnapshot) => {
+    const showPost = document.getElementById('viewPost');
+    const formP = document.querySelector('#postForm');
+    showPost.innerHTML = '';
+    querySnapshot.forEach((doc) => {
+      const post = doc.data();
+      post.id = doc.id;
+      // console.log(post);
+      showPost.innerHTML += `<div class="viewPost">
+        <div class="imageUser">
+          <img id="photo" src="imagenes/iconos/userPhoto.png" alt="Foto">
+          <p>${doc.data().name}</p>
+        </div>
+        <div class ="postForm">
+          <div>
+            <p id="title" class="postTitle" >${doc.data().title}</p>
+          </div>
+          <div>
+            <p id="textPost" class="description" >${doc.data().post}</p>
+          </div>
+        </div>
+        
+         
+        <div class="boxIconPost">
+        <div>
+            <p id="textPost" class="date"> ${doc.data().fecha.toDate()}</p>
+          </div>
+          <div>
+        <input type="image" id="edit" class="edit" data-id=${post.id} src="imagenes/iconos/iconEdit.png" alt="Like">
+        </div>  
+        <div>
+        <input type="image" id="trash" class="trash" data-id=${post.id} src="imagenes/iconos/iconTrash1.png" alt="Like">
+        </div>  
+        <div>
+          <input type="image" id="heartLikes" class="heartLikes" src="imagenes/iconos/IconHeart.png" alt="Like">
+        </div>
+        </div>`;
+      const btnsDelete = showPost.querySelectorAll('.trash');
+      // console.log(btnDelete);
+      btnsDelete.forEach((btn) => {
+        btn.addEventListener('click', async (e) => {
+          // e.targe ara recoger datos  y data set propriedad para buscra id 
+          // console.log(e.target.dataset.id);
+          await deletePosts(e.target.dataset.id);
+        });
+      });
+      
+      const formP = document.querySelector('#postForm');
+      const btnsEdit = showPost.querySelectorAll('.edit');
+      btnsEdit.forEach((btn) => {
+        btn.addEventListener('click', async (e) => {
+          let editStatus = false;
+          let id = '';
+          try {
+            // console.log(e.target.dataset.id);
+            const doc = await getPost(e.target.dataset.id);
+            document.querySelector('#userPost').style.display = 'block';
+            // console.log(doc.data());
+            // ahora  llevamos al formulario los dato 
+            const post1 = doc.data();
+            editStatus = true;
+            id = doc.id;
+
+            formP.postTitle.value = post1.title;
+            formP.description.value = post1.post;
+            formP.btnPost.innerText = 'Guardar';
+          } catch (error) {
+            console.log(error);
+          }
+        });
+      });
+    });
   });
 };
