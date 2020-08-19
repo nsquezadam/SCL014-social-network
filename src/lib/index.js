@@ -146,7 +146,6 @@ export const viewPost = () => {
 
   const fs = firebase.firestore();
   fs.collection('post').onSnapshot((querySnapshot) => {
-    
     const showPost = document.getElementById('viewPost');
     showPost.innerHTML = ' ';
     querySnapshot.forEach((doc) => {
