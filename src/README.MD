@@ -25,6 +25,12 @@ Dicha encuesta obtuvo los siguientes resultados:
 
 En razón a las respuestas obtenidas, empezamos a elaborar nuestras historias de usuarios. 
 
+![Gráfico3](src/imagenes/imgReadme/Grafico3.png)
+![Gráfico1](src/imagenes/imgReadme/Grafico3.png)
+![Gráfico2](src/imagenes/imgReadme/Grafico3.png)
+![Gráfico4](src/imagenes/imgReadme/Grafico3.png)
+
+
 
 ## HISTORIAS DE USUARIOS  
 Las historias de usuarios que obtuvimos de nuestra encuesta fueron las siguientes:
