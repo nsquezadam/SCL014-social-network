@@ -84,7 +84,7 @@ export const registerUser = (nameUser, email, password) => {
         displayName: nameUser,
       });
       const configuration = {
-        url: 'http://localhost:5000/',
+        url: 'https://jeniffergenoves.github.io/SCL014-social-network/src/#/home',
       };
       firebase.auth().currentUser.sendEmailVerification(configuration)
         .then(() => {
@@ -134,20 +134,29 @@ console.log(title, description);
     });
 };
 
+
+
+// Función para borrar post 
+const fs = firebase.firestore();
+const deletePost = (id) => fs.collection('post').doc(id).delete();
+
 // Función para mostrar Post
 
-export const viewPost = () => {
 
+export const viewPost = () => {
   const fs = firebase.firestore();
-  fs.collection('post').get().then((querySnapshot) => {
+  fs.collection('post').onSnapshot((querySnapshot) => {
+    const showPost = document.getElementById('viewPost');
+    showPost.innerHTML = ' ';
     querySnapshot.forEach((doc) => {
+      const infoPost = doc.data();
+      infoPost.id = doc.id;
       // console.log(`${doc.id} => ${doc.data()}`);
-      const showPost = document.getElementById('viewPost');
       //const fechapost = new Date(doc.data().fecha);  
       const templatePost = `
         <div class="viewPost">
         <div class="imageUser">
-          <img id="photo" src="imagenes/iconos/userPhoto.png" alt="Foto">
+          <img id="photo" src="imagenes/iconos/iconUser.png" alt="Foto">
           <p>${doc.data().name}</p>
         </div>
         <div class ="postForm">
@@ -157,30 +166,40 @@ export const viewPost = () => {
           <div>
             <p id="textPost" class="description" >${doc.data().post}</p>
           </div>
-        </div>
-        
-         
-        <div class="boxIconPost">
+          <div class="boxIconPost">
         <div>
             <p id="textPost" class="date"> ${doc.data().fecha.toDate()}</p>
           </div>
         <div>
-        <input type="image" id="trash" class="trash" src="imagenes/iconos/iconTrash1.png" alt="Like">
+        <input type="image"  id="trash" class="trash" data-id=${infoPost.id} src="imagenes/iconos/iconTrash1.png" alt="Like">
         </div>  
         <div>
           <input type="image" id="heartLikes" class="heartLikes" src="imagenes/iconos/IconHeart.png" alt="Like">
         </div>
         </div>
+        
+        </div>
        
         `;
       showPost.innerHTML += templatePost;
-    });
-});
-}; */
 
+      const btnsDelete = showPost.querySelectorAll('.trash');
+      btnsDelete.forEach((btn) => {
+        btn.addEventListener('click', async (e) => {
+          console.log(e.target.dataset.id);
+          await deletePost(e.target.dataset.id);
+          // window.location.hash = "#/home";
+          // location.reload();
+        });
+      });
+      // return showPost;
+    });
+  });
+};
 // Función Log out
 
 export const logOut = () => {
+
 
   firebase.auth().signOut().then(() => {
       console.log('logOut');
@@ -301,4 +320,5 @@ export const viewPost = () => {
       });
     });
   });
+
 };
