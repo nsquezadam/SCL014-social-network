@@ -78,7 +78,7 @@ Posteriormente, realizamos nuestro prototipo de alta fidelidad en Figma, tanto p
 
 ## NOTA PARA PROGRAMADORES
 
-- Para clonar archivo ingresar a : <https://github.com/nsquezadam/SCL014-data-lovers>
+- Para clonar archivo ingresar a : <https://github.com/JenifferGenoves/SCL014-social-network>
 
 - Da clic en Fork, luego en copiar con botón Clonar o descargar.
 
