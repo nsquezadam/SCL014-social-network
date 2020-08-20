@@ -1,4 +1,3 @@
-KB
 import { post, logOut, viewPost } from '../index.js';
 
 /* Aquí las publicaciones (TimeLine) Muro */

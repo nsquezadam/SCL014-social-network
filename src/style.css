@@ -28,7 +28,7 @@ header #logocontainer {
 #logo {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  width: 30vw;
+  width: 33vw;
   height: auto;
 }
 
@@ -62,8 +62,9 @@ main .welcome {
   text-align: center;
   padding: 0.1rem;
   width: 70vw;
-  height: 7vw;
+  height: 6vw;
   color: #82003E;
+  font-size: 3vw;
 }
 
 .linkRecover {
@@ -78,7 +79,7 @@ main .welcome {
   width: 30vw;
   height: auto;
   color: #FAF8F7;
-  font-size: 5vw;
+  font-size: 4vw;
   text-align: center;
   padding: 0.3rem;
   font-weight: 600;
@@ -89,36 +90,37 @@ main .welcome {
   justify-content: flex-end;
   text-align: right;
   margin-right: 5vw;
-  font-size: 3vw;
+  font-size: 3.5vw;
 
 }
 
 /* estilos para view home y post  */
 
 .userPost {
-  display: none;
+  display: block;
   width: 90vw;
   height: 110vw;
   margin-top: 10vw;
   margin-left: 5vw;
   margin-right: 5vw;
   border: 1px solid #CDADBC;
-  border-radius: 30pt 0 0 0;
+  border-radius: 10vw 0 0 0;
   box-shadow: 2px 4px 3px 2px #e4d5dc;
 
 
 }
 
 .viewPost {
-
+  display:inline-flex;
   width: 90vw;
-  height: 110vw;
+  height: auto;
   margin-top: 10vw;
   margin-left: 5vw;
   margin-right: 5vw;
   border: 1px solid #CDADBC;
-  border-radius: 30pt 0 0 0;
+  border-radius: 10vw 0 0 0;
   box-shadow: 2px 4px 3px 2px #e4d5dc;
+  font-size: 3vw;
 }
 
 /* iconos de post  */
@@ -128,24 +130,30 @@ main .welcome {
   flex-direction: row;
   justify-content:flex-end;
   margin-right: 4vw;
+
+  
 }
-.edit{
-  width:4vw;
-  margin-right: 3vw;
-}
+
 .trash{
+    
   width:3.8vw;
   margin-right: 3vw;
+  
 }
-.heartLikes {
-margin-right: 1vw;
+
+#heartLikes{
+
 width: 4vw;
+opacity:0.2;
+}
+#brief, #learning{
+  opacity:0.2;
 }
 .date{
-left: 0;
+margin-left: 2vw;
 font-size: 2vw;
 text-align: left;
-margin-right: 10vw;
+margin-right: 5vw;
 
 }
 
@@ -179,22 +187,19 @@ margin-right: 10vw;
   border-radius: 50pt;
   border: 1px solid #CDADBC;
   color: #82003E;
+  opacity: 0.2;
 }
 
-#exit {
-  width: 8vw;
-  margin-right: 3vw;
-  margin-top: 3vw;
-}
 
 #photo {
-  width: 20vw;
+  width: 15vw;
   height: auto;
   margin-left: 0;
   margin-top: 0;
   border: 1px solid #CDADBC;
-  border-radius: 90pt;
+  border-radius: 30pt;
   box-shadow: 0px 3px 4px 0px #CBC3C1;
+  background-color: #FAF8F7;
 
 }
 
@@ -202,6 +207,7 @@ margin-right: 10vw;
   margin-top: 5vw;
   text-align: center;
   font-size: 3vw;
+  margin-left:3vw;
 }
 
 /* .postsUser{
@@ -213,11 +219,12 @@ margin-right: 10vw;
   border: 1px solid #CDADBC;
   border-radius: 30pt 0 0 0;
   box-shadow: 2px 4px 3px 2px #e4d5dc;
+
+
 } */
 .select {
-  width: 100%;
+  width: 90vw;
   display: inline-flex;
-  justify-content: space-between;
 }
 
 .container_description {
@@ -234,10 +241,10 @@ margin-right: 10vw;
   width: 40vw;
   height: 10vw;
   color: #FAF8F7;
-  font-size: 1w;
+  font-size: 4vw;
   text-align: center;
   padding: 0.3rem;
-  font-weight: 600;
+  font-weight: bold;
 }
 
 .postSelection {
@@ -252,30 +259,39 @@ margin-right: 10vw;
   width: 13vw;
   height: auto;
   margin-right: 3vw;
-  margin-top: 0.5vw
+  margin-top: 0.5vw;
+  opacity:0.2;
+  margin-left: 3vw;
 }
 
 #courses {
   width: 11.5vw;
 
   height: auto;
+  opacity: 0.2;
 }
 
 .postTitle {
   text-align: center;
-  width: 75vw;
+  width: 70vw;
   height: 5vw;
   margin-top: 3vw;
-  border: 1px solid #CDADBC;
+  /* border: 1px solid #CDADBC; */
   margin-bottom: 3vw;
+  margin-left:2vw;
+  font-weight: bold;
 }
 
 .description {
   text-align: center;
-  width: 85vw;
+  width: 70vw;
   height: auto;
   border: 1px solid #CDADBC;
-  font-size: 4vw;
+  font-size: 3vw;
+  margin-left:2vw;
+  font-weight: lighter;
+  background-color: #E3D3D9;
+  margin-right: 2vw;
 
 }
 
@@ -351,7 +367,28 @@ section .registerForm {
   .containerForm {
     margin-top: 3vw;
     margin-bottom: 1vw;
-    font-size: 1vw;
+    font-size: 2vw;
+  }
+
+.viewPost {
+
+  width: 90vw;
+  height: auto;
+  margin-top: 25vw;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  border: 1px solid #CDADBC;
+  border-radius: 10vw 0 0 0;
+  box-shadow: 2px 4px 3px 2px #e4d5dc;
+}
+.date{
+  margin-left: 6vw;
+  font-size: 2vw;
+  text-align: left;
+  margin-right: 5vw;
+  margin-bottom: 2vw;
+ 
+ 
   }
 
   .infoBox {
@@ -361,8 +398,9 @@ section .registerForm {
     text-align: center;
     padding: 0.1rem;
     width: 30vw;
-    height: 4vw;
+    height: 2.5vw;
     color: #82003E;
+    font-size: 2vw;
   }
 
   .linkRecover {
@@ -401,46 +439,40 @@ section .registerForm {
 
 
   #logo {
-    width: 10vw;
+    width: 15vw;
     height: auto;
   }
 
   .postHeader {
     display: flex;
     flex-direction: row;
-    width: 50vw;
-    height: 20vw;
+    width: 100vw;
+    height: 12vw;
     top: 0;
     margin-top: -3vw;
     box-shadow: 0px 6px 4px #CDADBC;
     border-bottom: 1px solid #CDADBC;
     position: fixed;
-    z-index: -1;
+    z-index: 10;
     background-color: #FAF8F7;
   }
 
-  nav {
-    isplay: flex;
-    flex-direction: row;
-    width: 50vw;
-    height: 20vw;
+  .icons {
+    display: flex;
     top: 0;
-    margin-top: -3vw;
-    box-shadow: 0px 6px 4px #CDADBC;
-    border-bottom: 1px solid #CDADBC;
     position: fixed;
-    z-index: -1;
-    background-color: #FAF8F7;
+    z-index: 10;
+    margin-left: 50vw;
+    height : 10vw;
   }
 
   .iconbox {
-    margin-top: 3vw;
-    width: 6vw;
+    width: 5vw;
     height: 4vw;
     border-radius: 20pt;
     box-shadow: 0px 5px 4px 0px #cbc3c1;
     margin-right: 2px;
-    padding: 2vw;
+    padding: 1vw;
 
   }
 
@@ -453,31 +485,25 @@ section .registerForm {
   }
 
   #logo1 {
-    margin-top: 0º;
-    width: 15vw;
-    margin-left: 0;
-
+    margin-top: 1vw;
+    width: 10vw;
+    margin-left: 1vw;
   }
 
   #search {
-    margin-right: 60vwvw;
+    margin-right: 90vw;
     text-align: center;
-
-    margin-top: 3vw;
-    width: 15vw;
+    margin-top: 6vw;
+    width: 18vw;
     height: 3vw;
     border-style: none;
     background-color: #CDADBC;
     border-radius: 50pt;
     border: 1px solid #CDADBC;
     color: #82003E;
+    opacity: 0.2;
   }
 
-  #exit {
-    width: 4vw;
-    margin-top: 3vw;
-    margin-right: 50vw;
-  }
 
   #photo {
     width: 20vw;
@@ -485,8 +511,9 @@ section .registerForm {
     margin-left: 0;
     margin-top: 0;
     border: 1px solid #CDADBC;
-    border-radius: 90pt;
+    border-radius: 100pt;
     box-shadow: 0px 3px 4px 0px #CBC3C1;
+    background-color: #FAF8F7;
 
   }
 
@@ -494,6 +521,20 @@ section .registerForm {
     margin-top: 5vw;
     text-align: center;
     font-size: 3vw;
+  }
+
+  .userPost {
+    display: block;
+    width: 90vw;
+    height: 110vw;
+    margin-top: 25vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    border: 1px solid #CDADBC;
+    border-radius: 10vw 0 0 0;
+    box-shadow: 2px 4px 3px 2px #e4d5dc;
+  
+  
   }
 
   .postsUser {
@@ -506,9 +547,10 @@ section .registerForm {
   }
 
   .select {
-    width: 100%;
+    width: 70vw;
     display: inline-flex;
     justify-content: space-between;
+    margin-left: -20vw;
   }
 
   .container_description {
@@ -527,13 +569,11 @@ section .registerForm {
     width: 40vw;
     height: 10vw;
     color: #FAF8F7;
-    font-size: 1w;
+    font-size: 4vw;
     text-align: center;
     padding: 0.3rem;
-    font-weight: 600;
+    font-weight: bold;
   }
-
-
   .postSelection {
     width: 20vw;
     margin-left: 2vw;
@@ -546,32 +586,42 @@ section .registerForm {
     width: 13vw;
     height: auto;
     margin-right: 3vw;
-    margin-top: 0.5vw
+    margin-top: 0.5vw;
+    opacity:0.2;
+    margin-left: 3vw;
   }
 
   #courses {
     width: 11.5vw;
-
     height: auto;
+    opacity: 0.2;
   }
 
   #postTitle {
     text-align: center;
-    width: 30vw;
+    width: 50vw;
     height: 5vw;
     margin-top: 3vw;
-    border: 1px solid #CDADBC;
     margin-bottom: 3vw;
+    font-size: 3vw;
+
   }
 
   .description {
     text-align: center;
-    width: 35vw;
+    width: 60vw;
     height: 30vw;
     border: 1px solid #CDADBC;
-    font-size: 4vw;
+    font-size: 3vw;
+    margin-left: 6vw;
 
   }
+  #heartLikes{
+    margin-rigth:2vw;
+    width: 4vw;
+    opacity:0.2;
+
+    }
 
   #lapIco {
     width: 10vw;
