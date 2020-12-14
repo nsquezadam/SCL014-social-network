@@ -4,7 +4,7 @@ export const recover = () => {
   const divRecover = document.createElement('div');
   const viewRecover = `
   <div id="logoContainer">
-  <img id="logo" src="imagenes/witLogo.png" alt="logo"> 
+  <img id="logo" src="imagenes/witLogo.svg" alt="logo"> 
   </div>
 <h2>Escribe tú correo electrónico y te enviaremos un link para reestablecer tu contraseña</h2>
 <br> <br>

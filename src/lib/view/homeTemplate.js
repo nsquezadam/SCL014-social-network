@@ -1,13 +1,16 @@
-import { logOut, viewPost } from '../index.js';
+import {
+  logOut,
+  viewPost,
+} from '../index.js';
 
 /* Aquí las publicaciones (TimeLine) Muro */
 
 export const home = () => {
-    const divHome = document.createElement('div');
-    const viewHome = `
+  const divHome = document.createElement('div');
+  const viewHome = `
   <header class="postHeader">
   <div id="logoPost">
-      <a href="#/"><img  id="logo1"src="imagenes/witLogo1.png" alt="logo"></a>
+      <a href="#/"><img  id="logo1"src="imagenes/witLogo.svg" alt="logo"></a>
   </div>
   <div class="search">
       <input id="search" type="search" placeholder="Buscar">
@@ -34,7 +37,7 @@ export const home = () => {
   /* Para que con el icono más, se puede ver container para hacer post */
   const postWrite = divHome.querySelector('#newPost');
   postWrite.addEventListener('click', () => {
-  // e.preventDefault();
+    // e.preventDefault();
     // divHome.querySelector('#userPost').style.display = 'block';
     window.location.hash = '#/post';
   });
@@ -47,6 +50,6 @@ export const home = () => {
     logOut();
   });
   viewPost();
-
   return divHome;
+  // eslint-disable-next-line eol-last
 };

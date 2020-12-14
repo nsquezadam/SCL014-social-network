@@ -1,33 +1,40 @@
-import { logIn, logInMail, stateAuth } from '../index.js';
+import {
+  logIn,
+  logInMail,
+  stateAuth,
+} from '../index.js';
 
 export const welcome = () => {
   const divWelcome = document.createElement('div');
+  divWelcome.className = ('bodyWelcome');
+
   const viewWelcome = `
   <header>
   <div id="logoContainer">
-  <img id="logo" src="imagenes/witLogo1.png" alt="logo">
+  <img id="logo" src="imagenes/witLogo.svg" alt="logo">
   </div>
   </header>
   <main class="welcome">
   <h4>Bienvenida a</h4>
   <h5>¡La red para mujeres en el mundo tech! </h5>
   <section class="containerForm">
+  <h5>Ingreso</h5>
       <form id="logInForm">
-          <input type="mail" id="logIn-mail" class="infoBox" placeholder="Ingresa tu mail" required> <br><br>
+          <input type="mail" id="logIn-mail" class="infoBox" placeholder="Ingresa tu mail" required>
           <input type="password" id="logIn-password" class="infoBox" placeholder="Contraseña" required>
           <div class="linkRecover">
               <a id="linkRecover" href="#/recoverpass"><br>
           </div>
-          <h5>¿Olvidaste tu contraseña?</h5>
+          <h6>¿Olvidaste tu contraseña?</h6>
           </a>
           <br><button type="submit" class="btnSignUp">Ingresar</button><br>
       </form>
-      <div>
-          <h5>o ingresa con tu Cuenta</h5>
+      <div class="containerGmailSign">
+          <h6>o ingresa con tu Cuenta</h6>
           <input id="gmailLogo" type="image" src="imagenes/gmailLogo.png" name="" value="">
       </div>
       <div class="containerRegister">
-          <h5>Si no tienes cuenta <a href="#/SignUp">Registrate</a> </h5><br>
+          <h6>Si no tienes cuenta <a href="#/SignUp">Registrate</a> </h6><br>
       </div>
   </section>
 </main>`;
@@ -55,4 +62,5 @@ export const welcome = () => {
   });
 
   return divWelcome;
+  // eslint-disable-next-line eol-last
 };

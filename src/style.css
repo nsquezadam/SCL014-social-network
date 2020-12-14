@@ -4,67 +4,138 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-/* se trae imagen de fondo */
+/* se trae imagen de fondo mobile firts  cambio diseño  */
 body {
-  background-image: url(./imagenes/backgroundFull.png);
-  display: flex;
-  background-repeat: no-repeat;
-  background-position: left bottom;
-  background-size: 45vw;
-  background-attachment: fixed;
-  text-align: center;
-  color: #a64a76;
-  justify-content: center;
+
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+
 }
 
-header #logocontainer {
+#root {
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.bodyWelcome {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(./imagenes/bakcgroundFull.svg);
   display: flex;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  margin-right: 30vw;
-  margin-left: 45vw;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 60%;
+  background-attachment: fixed;
+  text-align: center;
+  color: #796070;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 100vw;
+  height: 18vh;
+  top: 0;
+}
+
+#logoContainer {
+  justify-content: center;
+  display: flex;
+  width: 30vw;
+  height: auto;
+  align-self: center;
 }
 
 #logo {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  width: 33vw;
-  height: auto;
+  width: 90%;
+  height: 90%;
+  align-self: center;
+  margin-top: 2vh;
 }
 
 /* estilos  welcome template  */
-main .welcome {
+.welcome {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-top: 2vw;
+  margin-top: 1.5vw;
   width: 100vw;
+  height: 60vh;
   font-size: 4vw;
+  align-items: center;
 }
 
-#gmailLogo {
-  margin-top: 1rem;
-  width: 15vw;
-  height: auto;
+.welcome h4 {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 1.3rem;
+  text-align: center;
+  margin-top: 1vh;
+  color: #796070;
 }
+
+.welcome h5 {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 1.3rem;
+  text-align: center;
+  width: 50vw;
+  color: #796070;
+  margin-top: 1vh;
+}
+
 
 .containerForm {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  font-size: 4vw;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
   justify-content: space-between;
+  background: #FAF8F7;
+  border: 1px solid #82B9C9;
+  box-sizing: border-box;
+  box-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
+  width: 90vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
 }
 
+.containerForm h5 {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 1.3rem;
+  text-align: center;
+  width: 50vw;
+  color: #796070;
+  margin-top: 1vh;
+}
+
+
+
+
 .infoBox {
-  background: #CDADBC;
-  border-radius: 70pt;
+  margin-top: 2vh;
+  background: rgba(130, 185, 201, 0.3);
+  border-radius: 0px 0px 0px 70px;
   border-style: none;
   text-align: center;
-  padding: 0.1rem;
-  width: 70vw;
-  height: 6vw;
-  color: #82003E;
-  font-size: 3vw;
+  width: 65vw;
+  height: 8vw;
+  color: #796070;
+  font-size: 0.7rem;
 }
 
 .linkRecover {
@@ -73,8 +144,9 @@ main .welcome {
 }
 
 .btnSignUp {
-  background: #82003E;
-  border-radius: 70pt;
+  background: #796070;
+  box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 30px 3px 30px 30px;
   border-style: none;
   width: 30vw;
   height: auto;
@@ -83,10 +155,25 @@ main .welcome {
   text-align: center;
   padding: 0.3rem;
   font-weight: 600;
+  margin-bottom: 2vh;
+}
+
+.containerGmailSign {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+
+}
+
+#gmailLogo {
+  width: 15vw;
+  height: auto;
 }
 
 .containerRegister {
-  margin-top: 2rem;
+  margin-top: 2vh;
+  align-self: flex-end;
   justify-content: flex-end;
   text-align: right;
   margin-right: 5vw;
@@ -111,7 +198,7 @@ main .welcome {
 }
 
 .viewPost {
-  display:inline-flex;
+  display: inline-flex;
   width: 90vw;
   height: auto;
   margin-top: 10vw;
@@ -124,36 +211,39 @@ main .welcome {
 }
 
 /* iconos de post  */
-.boxIconPost{
+.boxIconPost {
   margin-top: 1vw;
   display: flex;
   flex-direction: row;
-  justify-content:flex-end;
+  justify-content: flex-end;
   margin-right: 4vw;
 
-  
+
 }
 
-.trash{
-    
-  width:3.8vw;
+.trash {
+
+  width: 3.8vw;
   margin-right: 3vw;
-  
+
 }
 
-#heartLikes{
+#heartLikes {
 
-width: 4vw;
-opacity:0.2;
+  width: 4vw;
+  opacity: 0.2;
 }
-#brief, #learning{
-  opacity:0.2;
+
+#brief,
+#learning {
+  opacity: 0.2;
 }
-.date{
-margin-left: 2vw;
-font-size: 2vw;
-text-align: left;
-margin-right: 5vw;
+
+.date {
+  margin-left: 2vw;
+  font-size: 2vw;
+  text-align: left;
+  margin-right: 5vw;
 
 }
 
@@ -207,7 +297,7 @@ margin-right: 5vw;
   margin-top: 5vw;
   text-align: center;
   font-size: 3vw;
-  margin-left:3vw;
+  margin-left: 3vw;
 }
 
 /* .postsUser{
@@ -260,7 +350,7 @@ margin-right: 5vw;
   height: auto;
   margin-right: 3vw;
   margin-top: 0.5vw;
-  opacity:0.2;
+  opacity: 0.2;
   margin-left: 3vw;
 }
 
@@ -278,7 +368,7 @@ margin-right: 5vw;
   margin-top: 3vw;
   /* border: 1px solid #CDADBC; */
   margin-bottom: 3vw;
-  margin-left:2vw;
+  margin-left: 2vw;
   font-weight: bold;
 }
 
@@ -288,7 +378,7 @@ margin-right: 5vw;
   height: auto;
   border: 1px solid #CDADBC;
   font-size: 3vw;
-  margin-left:2vw;
+  margin-left: 2vw;
   font-weight: lighter;
   background-color: #E3D3D9;
   margin-right: 2vw;
@@ -327,10 +417,7 @@ margin-right: 5vw;
 }
 
 /* estilos para signUp */
-section {
-  font-size: 3vw;
-  width: 100vw;
-}
+
 
 section .registerForm {
 
@@ -370,38 +457,29 @@ section .registerForm {
     font-size: 2vw;
   }
 
-.viewPost {
+  .viewPost {
 
-  width: 90vw;
-  height: auto;
-  margin-top: 25vw;
-  margin-left: 5vw;
-  margin-right: 5vw;
-  border: 1px solid #CDADBC;
-  border-radius: 10vw 0 0 0;
-  box-shadow: 2px 4px 3px 2px #e4d5dc;
-}
-.date{
-  margin-left: 6vw;
-  font-size: 2vw;
-  text-align: left;
-  margin-right: 5vw;
-  margin-bottom: 2vw;
- 
- 
+    width: 90vw;
+    height: auto;
+    margin-top: 25vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    border: 1px solid #CDADBC;
+    border-radius: 10vw 0 0 0;
+    box-shadow: 2px 4px 3px 2px #e4d5dc;
   }
 
-  .infoBox {
-    background: #CDADBC;
-    border-radius: 70pt;
-    border-style: none;
-    text-align: center;
-    padding: 0.1rem;
-    width: 30vw;
-    height: 2.5vw;
-    color: #82003E;
+  .date {
+    margin-left: 6vw;
     font-size: 2vw;
+    text-align: left;
+    margin-right: 5vw;
+    margin-bottom: 2vw;
+
+
   }
+
+
 
   .linkRecover {
     font-weight: 200;
@@ -463,7 +541,7 @@ section .registerForm {
     position: fixed;
     z-index: 10;
     margin-left: 50vw;
-    height : 10vw;
+    height: 10vw;
   }
 
   .iconbox {
@@ -533,8 +611,8 @@ section .registerForm {
     border: 1px solid #CDADBC;
     border-radius: 10vw 0 0 0;
     box-shadow: 2px 4px 3px 2px #e4d5dc;
-  
-  
+
+
   }
 
   .postsUser {
@@ -574,6 +652,7 @@ section .registerForm {
     padding: 0.3rem;
     font-weight: bold;
   }
+
   .postSelection {
     width: 20vw;
     margin-left: 2vw;
@@ -587,7 +666,7 @@ section .registerForm {
     height: auto;
     margin-right: 3vw;
     margin-top: 0.5vw;
-    opacity:0.2;
+    opacity: 0.2;
     margin-left: 3vw;
   }
 
@@ -616,12 +695,13 @@ section .registerForm {
     margin-left: 6vw;
 
   }
-  #heartLikes{
-    margin-rigth:2vw;
-    width: 4vw;
-    opacity:0.2;
 
-    }
+  #heartLikes {
+    margin-right: 2vw;
+    width: 4vw;
+    opacity: 0.2;
+
+  }
 
   #lapIco {
     width: 10vw;

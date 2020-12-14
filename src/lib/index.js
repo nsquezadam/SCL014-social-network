@@ -3,7 +3,7 @@
 
 export const myFunction = () => {
   // aqui tu codigo
-  // console.log ('Hola mundo!');
+  console.log ('Hola mundo!');
 };
 // FUNCION OBSERVADOR  
 
@@ -122,7 +122,7 @@ console.log(title, description);
     name: user.displayName,
     title: title,
     post: description,
-    fecha: new Date(),
+    date: new Date(),
     uid: user.uid,
 
   })
