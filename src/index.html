@@ -1,52 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
-  rel="stylesheet">
-  <link rel="icon" type="image/png" href="imagenes/iconLogoFav.png" >
+    rel="stylesheet">
+  <link rel="icon" type="image/svg" href="imagenes/iconLogoFav.svg">
   <title>WIT</title>
-  
+
+
 </head>
 
 <body>
-  <!-- <header>WIT</header> -->
-  <!-- Main Container -->
-  <div id ="root"></div>
 
-  <script type="module" src="main.js"></script>
   
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
-  
-  <!-- TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
-  <!-- Add Firebase products that you want to use -->
- <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
- <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+ 
+  <div id="root">
 
-  <script>
+  </div>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+
+<script>
   // Your web app's Firebase configuration
   var firebaseConfig = {
-  apiKey: "AIzaSyCSxoia8zSEAFvuuSYQHpABw1XlnY7Y33U",
-  authDomain: "scl014socialnetworkwit.firebaseapp.com",
-  databaseURL: "https://scl014socialnetworkwit.firebaseio.com",
-  projectId: "scl014socialnetworkwit",
-  storageBucket: "scl014socialnetworkwit.appspot.com",
-  messagingSenderId: "303655966972",
-  appId: "1:303655966972:web:fb15f33f613794cb831f79",
-  measurementId: "G-4L0FJNCB0K"
-
+    apiKey: "AIzaSyBuh0SYU0i7Si7aIiIT42RYWVbba4BpoUA",
+    authDomain: "iterationnqmwitsocialnetwork.firebaseapp.com",
+    projectId: "iterationnqmwitsocialnetwork",
+    storageBucket: "iterationnqmwitsocialnetwork.appspot.com",
+    messagingSenderId: "349922808024",
+    appId: "1:349922808024:web:621ce499c8bcb2eeaac7ad"
   };
-  
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  const auth = firebase.auth;
-  //firebase.analytics();
-  </script>
+ 
+</script>
+
+   <script type="module"   src="main.js"></script>
+
 </body>
+
 </html>
-
-

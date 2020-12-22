@@ -1,5 +1,6 @@
 import {
   logOut,
+
   viewPost,
 } from '../index.js';
 
@@ -7,6 +8,7 @@ import {
 
 export const home = () => {
   const divHome = document.createElement('div');
+  divHome.className = ('bodyHome');
   const viewHome = `
   <header class="postHeader">
   <div id="logoPost">
@@ -26,14 +28,17 @@ export const home = () => {
  </nav>
 </header>
 
-<main class="postsUser">
-  <div  id="viewPost"> </div>
-</main>
+<class="postsUser"><div  id="viewPost"> </div>
+</ main>
 `;
   divHome.innerHTML = viewHome;
+  /* comprobacion */
+  // divHome.querySelector('bodyHome').style.display = 'none';
+//  stateAuth();
+
   /* Ocultar imagen background */
-  const body = document.querySelector('body');
-  body.style.backgroundImage = 'none';
+  // const body = document.querySelector('body');
+  // body.style.backgroundImage = 'none';
   /* Para que con el icono más, se puede ver container para hacer post */
   const postWrite = divHome.querySelector('#newPost');
   postWrite.addEventListener('click', () => {

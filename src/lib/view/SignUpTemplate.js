@@ -6,25 +6,27 @@ import {
 
 export const register = () => {
   const divRegister = document.createElement('div');
+  divRegister.className = ('bodyWelcome');
   const viewRegister = `
   <header>
   <div id="logoContainer">
-      <img id="logo" src="imagenes/witLogo.svg" alt="logo">
+      <img id="logoprin" src="imagenes/witLogo.svg" alt="logo">
   </div>
 </header>
-<main class="mainRegister">
-  <h2>Crea tu cuenta y accede a WiT</h2>
-  <br>
-  <section class="registerForm">
+<main class="signUP">
+  <h5>Crea tu cuenta y accede a WiT</h5>
+  
+  <section class="containerFormSignUP">
+  <h6>Registro</h6>
       <form id="registerForm">
-          <p>Nombre</p>
+          <label for="name">Nombre</label>
           <input type="text" id="name" class="infoBox" required autofocus></input>
-          <p>Correo Electrónico</p>
+          <label for="lastName">Apellido</label>
+          <input type="text" id="lastName" class="infoBox" required autofocus></input>
+          <label for="email">Correo Electrónico</label>
           <input type="email" id="email" class="infoBox" required></input>
-          <br> <br>
-          <p>Contraseña</p>
+          <label for="password">Contraseña</label>
           <input type="password" id="password" class="infoBox" required></input>
-          <br> <br>
           <button class ="btnSignUp" type="submit" id="createaccount" value="Crear Cuenta">Crear Cuenta</button>
       </form>
   </section>
@@ -34,6 +36,7 @@ export const register = () => {
 
   /* Variables desde ID */
   const name = divRegister.querySelector('#name');
+  const lastName = divRegister.querySelector('#lastName');
   const mail = divRegister.querySelector('#email');
   const pass = divRegister.querySelector('#password');
   const formRegister = divRegister.querySelector('#registerForm');
@@ -45,8 +48,10 @@ export const register = () => {
     const email = mail.value;
     const password = pass.value;
     const nameUser = name.value;
-    registerUser(nameUser, email, password);
+    const lastNameUser = lastName.value;
+    registerUser(email, password, nameUser, lastNameUser);
     formRegister.reset();
   });
   return divRegister;
+  // eslint-disable-next-line eol-last
 };

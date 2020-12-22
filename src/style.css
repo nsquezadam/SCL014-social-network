@@ -3,7 +3,43 @@
   margin: 0;
   font-family: 'Open Sans', sans-serif;
 }
+/* VIEW 404 */
+.back404{
+  width: 100vw;
+  height: 100vh;
+background-image: url('./imagenes/backGround404.svg') ;
+background-repeat: no-repeat;
+background-position: center;
+background-size: 80%;
+display: flex;
+flex-direction: column;
+}
 
+.back404 p{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #796070;
+margin-top: 6vh;
+
+
+}
+.btnBackPr{
+  background: #796070;
+  box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 30px 3px 30px 30px;
+  border-style: none;
+  width: 30vw;
+  height: auto;
+  color: #FAF8F7;
+  font-size: 1rem;
+  text-align: center;
+  padding: 0.3rem;
+  font-weight: 600;
+  margin-top: 2vh;
+  align-self: center;
+
+}
 /* se trae imagen de fondo mobile firts  cambio diseño  */
 body {
 
@@ -20,7 +56,7 @@ body {
   width: 100vw;
   height: 100vh;
 }
-
+/* body de  welcome  y  register   */
 .bodyWelcome {
   width: 100vw;
   height: 100vh;
@@ -41,7 +77,7 @@ header {
   align-content: center;
   width: 100vw;
   height: 18vh;
-  top: 0;
+  justify-content: center;
 }
 
 #logoContainer {
@@ -52,7 +88,7 @@ header {
   align-self: center;
 }
 
-#logo {
+#logoprin {
   width: 90%;
   height: 90%;
   align-self: center;
@@ -67,9 +103,10 @@ header {
   margin-top: 1.5vw;
   width: 100vw;
   height: 60vh;
-  font-size: 4vw;
+
   align-items: center;
 }
+
 
 .welcome h4 {
   font-family: Open Sans;
@@ -133,17 +170,18 @@ header {
   border-style: none;
   text-align: center;
   width: 65vw;
-  height: 8vw;
+  height: 4vh;
   color: #796070;
   font-size: 0.7rem;
+
 }
 
 .linkRecover {
   font-weight: 200;
-  font-size: 1vw;
+  font-size: 1rem;
 }
 
-.btnSignUp {
+.btnSignIN {
   background: #796070;
   box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
   border-radius: 30px 3px 30px 30px;
@@ -151,7 +189,7 @@ header {
   width: 30vw;
   height: auto;
   color: #FAF8F7;
-  font-size: 4vw;
+  font-size: 1rem;
   text-align: center;
   padding: 0.3rem;
   font-weight: 600;
@@ -165,23 +203,108 @@ header {
 
 
 }
-
 #gmailLogo {
   width: 15vw;
   height: auto;
 }
+/* register */
 
-.containerRegister {
-  margin-top: 2vh;
-  align-self: flex-end;
-  justify-content: flex-end;
-  text-align: right;
-  margin-right: 5vw;
-  font-size: 3.5vw;
+.signUP{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  width: 100vw;
+  height: 60vh;
+
+  align-items: center;
+}
+.signUP h5{
+  margin-top: 4vh;
+}
+
+.containerFormSignUP {
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  justify-content: space-between;
+  background: #FAF8F7;
+  border: 1px solid #82B9C9;
+  box-sizing: border-box;
+  box-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
+  width: 90vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
 }
 
+.containerFormSignUP h6 {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 1.3rem;
+  text-align: center;
+  width: 50vw;
+  color: #796070;
+  margin-top: 1vh;
+  margin-bottom: 2vh;
+}
+
+#registerForm{
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem ;
+  font-family: Open Sans;
+  margin-bottom:1vh;
+}
+#registerForm  .infoBox{
+  margin-bottom: 2vh;
+  margin-top: 1vh;
+ 
+}
+.btnSignUp {
+  background: #796070;
+  box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 30px 3px 30px 30px;
+  border-style: none;
+  width: 30vw;
+  height: auto;
+  color: #FAF8F7;
+  font-size: 1rem;
+  text-align: center;
+  padding: 0.3rem;
+  font-weight: 600;
+  margin-bottom: 2vh;
+  align-self: center;
+}
+
+
+
 /* estilos para view home y post  */
+.bodyHome{
+  /* display: none; */
+  width: 100vw;
+  height: 100vh;
+  margin:0;
+  padding: 0;
+}
+.postHeader {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 15vw;
+  margin: 2vw;
+  justify-content: space-between;
+  padding-top: 3vw;
+}
+#logo1 {
+  width: 10vw;
+  margin-left: 3vw;
+  margin-top: 1vw;
+}
+
 
 .userPost {
   display: block;
@@ -248,21 +371,9 @@ header {
 }
 
 
-.postHeader {
-  display: inline-flex;
-  flex-direction: row;
-  width: 100vw;
-  height: 15vw;
-  margin: 2vw;
-  justify-content: space-between;
-  padding-top: 3vw;
-}
 
-#logo1 {
-  width: 17vw;
-  margin-left: 3vw;
-  margin-top: 1vw;
-}
+
+
 
 #search {
   align-self: center;
@@ -425,37 +536,136 @@ section .registerForm {
 }
 
 /* responsive media query  */
-@media screen and (min-width: 548px) {
+@media screen and (min-width: 415px) {
 
-  body {
-    background-image: url(./imagenes/backgroundFull.png);
-    display: flex;
-    background-repeat: no-repeat;
+  /* vist welcoome */
+  .bodyWelcome {
+    flex-direction: row;
+    background-size: 55%;
     background-position: left bottom;
-    background-size: 43vw auto;
-    background-attachment: fixed;
-    text-align: center;
-    color: #a64a76;
+  }
+  .back404{
+   
+  background-size: 70%;
   }
 
-  header #logoContainer {
+  header {
+  
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      width: 50vw;
+      height: 30vh
+    }
+    
+  #logoContainer {
+    align-self: center;
+    align-items: center;
+    margin-top: 3vh;
+    
+  }
 
-    margin-left: 50vw;
+  #logoprin{
+    width: 60%;
+    height: 60%;
+    align-self: center;
   }
 
   .welcome {
-    display: flex;
-    flex-direction: column;
-    margin-left: 50vw;
-    font-size: 2vw;
+    width: 50vw;
+    height: 80vh;
+    font-size: 1.5rem;
     text-align: center;
   }
 
-  .containerForm {
-    margin-top: 3vw;
-    margin-bottom: 1vw;
-    font-size: 2vw;
+  .welcome h4 {
+    font-size: 2rem;
+
   }
+
+  .welcome h5 {
+    margin-top: 1vh;
+    font-size: 2rem;
+    width: 28vw;
+    line-height: 2.3rem;
+  }
+
+
+  .containerForm {
+    width: 40vw;
+    height: 80vh;
+    margin-top: 5vh;
+    margin-bottom: 1vh;
+    font-size: 2vw;
+
+  }
+
+  .containerForm h5 {
+    margin-top: 2vh;
+    font-size: 1.8rem;
+  }
+
+  .infoBox {
+    width: 30vw;
+    height: 5vh;
+
+  }
+
+  .btnSignIN {
+    width: 15vw;
+    height: auto;
+    font-size: 1.5rem;
+  }
+
+  .containerGmailSign {
+    font-size: 1rem;
+
+  }
+
+
+  #gmailLogo {
+    margin-top: 2vh;
+    width: 5vw;
+    height: auto;
+  }
+
+/* register */
+
+.signUP{
+  width: 50vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+
+}
+
+.signUP h5{
+  margin-top: 6vh;
+  margin-bottom: 2vh;
+  text-align: center;
+  margin-left:20vw ;
+  font-size: 1.6rem;
+}
+.containerFormSignUP {
+  width: 40vw;
+height: 60vh;
+margin-bottom: 1vh;
+font-size: 2vw;
+margin-left: 20vw;
+justify-content: space-evenly;
+
+}
+.containerFormSignUP h6{
+  font-size: 1.5rem;
+}
+.btnSignUp{
+  margin-bottom: 3vh;
+  margin-top: 2vh;
+  width: 15vw;
+  height: auto;
+  font-size: 1.1rem;
+}
 
   .viewPost {
 
@@ -486,25 +696,6 @@ section .registerForm {
     font-size: 1vw;
   }
 
-  .btnSignUp {
-    background: #82003E;
-    border-radius: 70pt;
-    border-style: none;
-    width: 15vw;
-    height: 4vw;
-    color: #FAF8F7;
-    font-size: 2vw;
-    text-align: center;
-    padding: 0.3rem;
-    font-weight: 600;
-    margin-top: 1vw;
-  }
-
-  #gmailLogo {
-    margin-top: 1rem;
-    width: 10vw;
-    height: auto;
-  }
 
   .containerRegister {
     margin-top: 2rem;
